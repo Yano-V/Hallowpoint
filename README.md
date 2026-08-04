@@ -19,11 +19,3 @@ Game Engine: Godot Engine (GDScript)
 Art & Design: Aseprite / Custom Pixel Art Assets
 
 Version Control: Git & GitHub
-
-Project Structure:
-
-Hallowpoint/
-├── assets/          # Sprites, tilesets, audio, and UI elements
-├── scenes/          # Godot scene files (.tscn) for levels, UI, and entities
-├── scripts/         # GDScript logic files governing game systems and mechanics
-└── project.godot    # Main Godot project configuration file
