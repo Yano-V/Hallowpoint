@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://btqrt8xqu2qyb"]
+
+[ext_resource type="Script" uid="uid://r1id1bhvns1q" path="res://Scripts/MainMenu.gd" id="1_ghw46"]
+[ext_resource type="Texture2D" uid="uid://ci4c5dhp2pd5o" path="res://Assets/Images/Background.png" id="2_df05h"]
+[ext_resource type="AudioStream" uid="uid://cm1kc130c4k17" path="res://Assets/Audio/AmbientAudio.mp3" id="3_8um5k"]
+[ext_resource type="AudioStream" uid="uid://dkkdo0r1ajkbf" path="res://Assets/Audio/school_bell.mp3" id="4_xim88"]
+
+[node name="MainMenu" type="Control" unique_id=1029258247]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghw46")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1986706524]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 1283.0
+offset_bottom = 1251.0
+texture = ExtResource("2_df05h")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1463317014]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1254.0
+color = Color(0, 0, 0, 0.3137255)
+
+[node name="Title" type="Label" parent="." unique_id=160177821]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.0
+offset_top = -36.0
+offset_right = 251.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95686275, 0.92156863, 0.8156863, 1)
+theme_override_font_sizes/font_size = 64
+text = "         HALLOWPOINT"
+
+[node name="Subtitle" type="Label" parent="." unique_id=1303926606]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = 47.0
+offset_right = 84.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Restore what was forgotten."
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=1529330477]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 146.0
+offset_right = 60.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="StartButton" type="Button" parent="MenuButtons" unique_id=975500757]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Start"
+
+[node name="ContinueButton" type="Button" parent="MenuButtons" unique_id=695574920]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Continue"
+
+[node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=2113377561]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="MenuButtons" unique_id=606685777]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="MenuButtons" unique_id=2136515074]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[node name="AmbientAudio" type="AudioStreamPlayer2D" parent="." unique_id=1586655404]
+stream = ExtResource("3_8um5k")
+autoplay = true
+
+[node name="BellSound" type="AudioStreamPlayer2D" parent="." unique_id=1558298371]
+stream = ExtResource("4_xim88")
+
+[node name="MenuAnimations" type="AnimationPlayer" parent="." unique_id=1366356323]
+
+[node name="BellTimer" type="Timer" parent="." unique_id=2017599314]
+wait_time = 6.0
+autostart = true
+
+[connection signal="pressed" from="MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="timeout" from="BellTimer" to="." method="_on_bell_timer_timeout"]
