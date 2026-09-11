@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://t2cle7imbvpl"]
+
+[ext_resource type="Script" uid="uid://cqftwhy6a50ve" path="res://Scripts/LoadingScreen.gd" id="1_kddo8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kstye"]
+load_path = "res://.godot/imported/LOADINGscreen1.png-465e4805c8182a8e21c98c9d92324fbc.ctex"
+
+[node name="LoadingScreen" type="Control" unique_id=1508216231]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kddo8")
+
+[node name="Background" type="TextureRect" parent="." unique_id=901530741]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("CompressedTexture2D_kstye")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=586908864]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=51985459]

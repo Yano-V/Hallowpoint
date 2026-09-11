@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://b4il1adw46bhk"]
+
+[ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="1_vfnt7"]
+[ext_resource type="Script" uid="uid://dq8ai02qnav53" path="res://Scripts/MENU.gd" id="1_vlheg"]
+[ext_resource type="Texture2D" uid="uid://coshegwnl0bqn" path="res://Assets/Images/RESUMEbtn (1).png" id="3_7e7a2"]
+[ext_resource type="Texture2D" uid="uid://c25khyvu6vcim" path="res://Assets/Images/SAVEbtn-2.png" id="5_7e7a2"]
+[ext_resource type="Texture2D" uid="uid://fipjcjeflmp5" path="res://Assets/Images/SETTINGSbtn-2.png" id="5_cn24f"]
+[ext_resource type="Texture2D" uid="uid://bvnm1c1n7kky5" path="res://Assets/Images/MAINMENUbtn-2.png" id="6_cn24f"]
+[ext_resource type="Texture2D" uid="uid://ckt1yrh7csyov" path="res://Assets/Images/QUITbtn-2.png" id="7_a3mjc"]
+
+[node name="MENU" type="Control" unique_id=873905108]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlheg")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1397130180]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_vfnt7")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=953479291]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.6666667)
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=496279987]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 1024.0
+offset_bottom = 640.0
+metadata/_edit_lock_ = true
+
+[node name="RESUMEbtn" type="TextureButton" parent="Panel" unique_id=1237102702]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 80.0
+offset_right = 539.0
+offset_bottom = 157.0
+texture_normal = ExtResource("3_7e7a2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SAVEbtn" type="TextureButton" parent="Panel" unique_id=607502419]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 163.0
+offset_right = 540.0
+offset_bottom = 237.0
+texture_normal = ExtResource("5_7e7a2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SETTINGSbtn" type="TextureButton" parent="Panel" unique_id=1440144403]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 243.0
+offset_right = 541.0
+offset_bottom = 322.0
+texture_normal = ExtResource("5_cn24f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MAINMENUbtn" type="TextureButton" parent="Panel" unique_id=1653118018]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 326.0
+offset_right = 542.0
+offset_bottom = 404.0
+texture_normal = ExtResource("6_cn24f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="QUITbtn" type="TextureButton" parent="Panel" unique_id=1925906853]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 408.0
+offset_right = 542.0
+offset_bottom = 484.0
+texture_normal = ExtResource("7_a3mjc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Panel/SAVEbtn" to="." method="_on_sav_ebtn_pressed"]
+[connection signal="pressed" from="Panel/SETTINGSbtn" to="." method="_on_setting_sbtn_pressed"]
+[connection signal="pressed" from="Panel/MAINMENUbtn" to="." method="_on_mainmenu_btn_pressed"]
+[connection signal="pressed" from="Panel/QUITbtn" to="." method="_on_qui_tbtn_pressed"]

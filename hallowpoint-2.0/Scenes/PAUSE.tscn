@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bbeyef83y2xxf"]
+
+[ext_resource type="Script" uid="uid://cufmir6sefv0u" path="res://Scripts/PAUSE.gd" id="1_aepgh"]
+[ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="1_mmi77"]
+[ext_resource type="Texture2D" uid="uid://be2f5ki6dmgxc" path="res://Assets/Images/PAUSEbg.png" id="2_0luxd"]
+[ext_resource type="Texture2D" uid="uid://dgy2rn0y4mnqe" path="res://Assets/Images/RESTARTicon.png" id="3_ehs7x"]
+[ext_resource type="Texture2D" uid="uid://b6gpsjpp4em1p" path="res://Assets/Images/MENU2icon.png" id="4_aepgh"]
+[ext_resource type="Texture2D" uid="uid://bi5o6ud5di1sf" path="res://Assets/Images/SETTINGSicon.png" id="5_43w6m"]
+[ext_resource type="Texture2D" uid="uid://coshegwnl0bqn" path="res://Assets/Images/RESUMEbtn (1).png" id="7_aepgh"]
+
+[node name="PAUSE" type="Control" unique_id=1434337191]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aepgh")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1522239187]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_mmi77")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=574112475]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.627451)
+metadata/_edit_lock_ = true
+
+[node name="PAUSEbg" type="TextureRect" parent="." unique_id=1687725013]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 56.0
+offset_right = 1095.0
+offset_bottom = 779.0
+texture = ExtResource("2_0luxd")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="RESTARTbtn" type="TextureButton" parent="." unique_id=912916499]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 240.0
+offset_right = 577.0
+offset_bottom = 495.0
+texture_normal = ExtResource("3_ehs7x")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="MENUbtn" type="TextureButton" parent="." unique_id=1639379952]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 240.0
+offset_right = 773.0
+offset_bottom = 495.0
+texture_normal = ExtResource("4_aepgh")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="SETTINGSbtn" type="TextureButton" parent="." unique_id=2122413899]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 240.0
+offset_right = 968.0
+offset_bottom = 495.0
+texture_normal = ExtResource("5_43w6m")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="RESUMEbtn" type="TextureButton" parent="." unique_id=961226228]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 471.0
+offset_right = 781.0
+offset_bottom = 534.0
+texture_normal = ExtResource("7_aepgh")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay2" type="ColorRect" parent="." unique_id=1175387169]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 1272.0
+offset_bottom = 723.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.3019608)
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="RESTARTbtn" to="." method="_on_restar_tbtn_pressed"]
+[connection signal="pressed" from="MENUbtn" to="." method="_on_men_ubtn_pressed"]
+[connection signal="pressed" from="SETTINGSbtn" to="." method="_on_setting_sbtn_pressed"]
+[connection signal="pressed" from="RESUMEbtn" to="." method="_on_resum_ebtn_pressed"]

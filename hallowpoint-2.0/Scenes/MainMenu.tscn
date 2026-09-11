@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://btqrt8xqu2qyb"]
+
+[ext_resource type="Script" uid="uid://r1id1bhvns1q" path="res://Scripts/MainMenu.gd" id="1_ghw46"]
+[ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="2_cmrfp"]
+[ext_resource type="AudioStream" uid="uid://cm1kc130c4k17" path="res://Assets/Audio/AmbientAudio.mp3" id="3_8um5k"]
+[ext_resource type="Texture2D" uid="uid://byphsk26qnujn" path="res://Assets/Images/STARTicon.png" id="3_koqhg"]
+[ext_resource type="Texture2D" uid="uid://b6gpsjpp4em1p" path="res://Assets/Images/MENU2icon.png" id="4_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://btdekoar0opa" path="res://Assets/Images/GT.png" id="4_loo7a"]
+[ext_resource type="AudioStream" uid="uid://dkkdo0r1ajkbf" path="res://Assets/Audio/school_bell.mp3" id="4_xim88"]
+[ext_resource type="Texture2D" uid="uid://cvr7s25kd4xw7" path="res://Assets/Images/ABOUT2icon.png" id="5_loo7a"]
+
+[node name="MainMenu" type="Control" unique_id=1029258247]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghw46")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1986706524]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_cmrfp")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="Game Title" type="TextureRect" parent="." unique_id=282465026]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 6.0
+offset_right = 1133.0
+offset_bottom = 416.0
+texture = ExtResource("4_loo7a")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1463317014]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.50980395)
+metadata/_edit_lock_ = true
+
+[node name="STARTbutton" type="TextureButton" parent="." unique_id=817900913]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 274.0
+offset_right = 834.0
+offset_bottom = 648.0
+texture_normal = ExtResource("3_koqhg")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="STARTbutton" unique_id=1798196057]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 124.0
+offset_right = 382.0
+offset_bottom = 210.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+metadata/_edit_lock_ = true
+
+[node name="MENUbutton" type="TextureButton" parent="." unique_id=1575903388]
+layout_mode = 0
+offset_left = 1157.0
+offset_top = 593.0
+offset_right = 1282.0
+offset_bottom = 725.0
+texture_normal = ExtResource("4_cmrfp")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="MENUbutton" unique_id=538791968]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 27.0
+offset_right = 102.0
+offset_bottom = 105.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+metadata/_edit_lock_ = true
+
+[node name="ABOUTbutton" type="TextureButton" parent="." unique_id=1120211975]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 588.0
+offset_right = 133.0
+offset_bottom = 721.0
+texture_normal = ExtResource("5_loo7a")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="ABOUTbutton" unique_id=1533378107]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 25.0
+offset_right = 106.0
+offset_bottom = 106.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+metadata/_edit_lock_ = true
+
+[node name="AmbientAudio" type="AudioStreamPlayer2D" parent="." unique_id=1586655404]
+stream = ExtResource("3_8um5k")
+autoplay = true
+
+[node name="BellSound" type="AudioStreamPlayer2D" parent="." unique_id=1558298371]
+stream = ExtResource("4_xim88")
+bus = &"SFX"
+
+[node name="MenuAnimations" type="AnimationPlayer" parent="." unique_id=1366356323]
+
+[node name="BellTimer" type="Timer" parent="." unique_id=2017599314]
+wait_time = 6.0
+autostart = true
+
+[connection signal="pressed" from="STARTbutton" to="." method="_on_star_tbutton_pressed"]
+[connection signal="pressed" from="MENUbutton" to="." method="_on_men_ubutton_pressed"]
+[connection signal="pressed" from="ABOUTbutton" to="." method="_on_abou_tbutton_pressed"]
+[connection signal="timeout" from="BellTimer" to="." method="_on_bell_timer_timeout"]

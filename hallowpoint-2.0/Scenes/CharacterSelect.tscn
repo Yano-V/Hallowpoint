@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://75ehc6sencjd"]
+
+[ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="1_fxt7g"]
+[ext_resource type="Script" uid="uid://6cbbb8i6rsl6" path="res://Scripts/CharacterSelect.gd" id="1_i0prf"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="3_jbnqh"]
+[ext_resource type="Texture2D" uid="uid://ddsqtr3ecl0f2" path="res://Assets/Images/CHARACTERS/placeholder.png" id="4_8cwx3"]
+[ext_resource type="Texture2D" uid="uid://bybp1y12s5mdt" path="res://Assets/Images/CHARACTERS/BOY.png" id="5_ydguf"]
+[ext_resource type="Texture2D" uid="uid://md1dk5w7j2gm" path="res://Assets/Images/CHARACTERS/GIRL.png" id="6_vfpf0"]
+[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/BACK Button2.png" id="7_8cwx3"]
+[ext_resource type="Texture2D" uid="uid://bsopa6uoj2pfq" path="res://Assets/Images/CHARACTERS/usernamePH.png" id="8_8cwx3"]
+
+[node name="CharacterSelect" type="Control" unique_id=2121065108]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0prf")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1763510774]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_fxt7g")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=21322891]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.6666667)
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="." unique_id=709660204]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 67.0
+offset_right = 926.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_jbnqh")
+theme_override_font_sizes/font_size = 50
+text = "CHOOSE YOUR CHARACTER"
+
+[node name="BOY" type="TextureButton" parent="." unique_id=2063108995]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 576.0
+offset_bottom = 632.0
+toggle_mode = true
+texture_normal = ExtResource("4_8cwx3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BOYimg" type="TextureRect" parent="BOY" unique_id=953646765]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 52.0
+offset_right = 400.0
+offset_bottom = 463.0
+texture = ExtResource("5_ydguf")
+expand_mode = 1
+
+[node name="GIRL" type="TextureButton" parent="." unique_id=1341815682]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 1152.0
+offset_bottom = 632.0
+toggle_mode = true
+texture_normal = ExtResource("4_8cwx3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="GIRLimg" type="TextureRect" parent="GIRL" unique_id=579353398]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 52.0
+offset_right = 405.0
+offset_bottom = 463.0
+texture = ExtResource("6_vfpf0")
+expand_mode = 1
+
+[node name="BackBtn" type="TextureButton" parent="." unique_id=1972129697]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 122.0
+offset_bottom = 112.0
+texture_normal = ExtResource("7_8cwx3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UNPopUp" type="TextureRect" parent="." unique_id=416604025]
+visible = false
+layout_mode = 0
+offset_left = 358.0
+offset_top = 275.0
+offset_right = 927.0
+offset_bottom = 421.0
+texture = ExtResource("8_8cwx3")
+expand_mode = 1
+
+[node name="UsernameInput" type="LineEdit" parent="UNPopUp" unique_id=1145385453]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 31.0
+offset_right = 534.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("3_jbnqh")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Enter your name..."
+
+[node name="ENTERbtn" type="Button" parent="UNPopUp" unique_id=1681789844]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 174.0
+offset_right = 366.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("3_jbnqh")
+theme_override_font_sizes/font_size = 30
+text = "CONFIRM"
+
+[connection signal="pressed" from="BOY" to="." method="_on_boy_pressed"]
+[connection signal="pressed" from="GIRL" to="." method="_on_girl_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="UNPopUp/ENTERbtn" to="." method="_on_ente_rbtn_pressed"]
