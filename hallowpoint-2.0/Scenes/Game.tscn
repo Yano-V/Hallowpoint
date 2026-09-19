@@ -2,135 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cfwwp253im127" path="res://Scripts/Game.gd" id="1_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://bqqabfhlctonm" path="res://Scenes/Player.tscn" id="1_gl6un"]
-[ext_resource type="Texture2D" uid="uid://dv1nmgyrhi7b8" path="res://Assets/Images/TYKG-1.png" id="1_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://b657u28buumte" path="res://Scenes/MAP1.tscn" id="2_7lihs"]
 [ext_resource type="Script" uid="uid://c8smxj2qocapi" path="res://Scripts/Player.gd" id="2_j5yw3"]
 [ext_resource type="Texture2D" uid="uid://dxwvyncd8c06j" path="res://Assets/Images/ICONS/PAUSEicon.png" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://bbeyef83y2xxf" path="res://Scenes/PAUSE.tscn" id="6_7lihs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kldst"]
-size = Vector2(512.4375, 124.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
-size = Vector2(95, 428)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
-size = Vector2(471, 171.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5yw3"]
-size = Vector2(235.5, 65)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgofq"]
-size = Vector2(58, 372)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2irst"]
-size = Vector2(338, 334)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf53h"]
-size = Vector2(45.5, 283)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_71axn"]
-size = Vector2(139.5, 177)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dahhg"]
-size = Vector2(405, 176.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3so38"]
-size = Vector2(256, 74)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cx6b"]
-size = Vector2(35, 147)
-
 [node name="Game" type="Node2D" unique_id=1994847023]
 script = ExtResource("1_b2bpf")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1610671923]
-position = Vector2(641, 361)
-scale = Vector2(0.765, 0.765)
-texture = ExtResource("1_j5yw3")
-metadata/_edit_lock_ = true
-
-[node name="Ground" type="ColorRect" parent="." unique_id=847620506]
-visible = false
-offset_right = 640.0
-offset_bottom = 640.0
-color = Color(1, 1, 1, 0.78431374)
-metadata/_edit_lock_ = true
+[node name="Map1" parent="." unique_id=1340444013 instance=ExtResource("2_7lihs")]
 
 [node name="Player" parent="." unique_id=929165942 instance=ExtResource("1_gl6un")]
 position = Vector2(867, 384)
 script = ExtResource("2_j5yw3")
-
-[node name="Foreground" type="Sprite2D" parent="." unique_id=1715169702]
-
-[node name="WallTop" type="StaticBody2D" parent="." unique_id=1753230142]
-position = Vector2(39, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=2001146408]
-position = Vector2(235, 656)
-shape = SubResource("RectangleShape2D_kldst")
-
-[node name="Wall1" type="StaticBody2D" parent="." unique_id=774036755]
-position = Vector2(243, 143)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1" unique_id=1059665376]
-position = Vector2(-173.5, 249)
-shape = SubResource("RectangleShape2D_b2bpf")
-
-[node name="Wall2" type="StaticBody2D" parent="." unique_id=56288599]
-position = Vector2(120, 280)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=1431398451]
-position = Vector2(862.5, 344.875)
-shape = SubResource("RectangleShape2D_7lihs")
-
-[node name="Wall3" type="StaticBody2D" parent="." unique_id=102561426]
-position = Vector2(427, 617)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=1727257898]
-position = Vector2(-185.75, -44.5)
-shape = SubResource("RectangleShape2D_j5yw3")
-
-[node name="Wall4" type="StaticBody2D" parent="." unique_id=986737409]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=986376686]
-position = Vector2(1250, 525)
-shape = SubResource("RectangleShape2D_fgofq")
-
-[node name="Wall5" type="StaticBody2D" parent="." unique_id=1125672769]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5" unique_id=1809921665]
-position = Vector2(1109, 169)
-shape = SubResource("RectangleShape2D_2irst")
-
-[node name="Wall6" type="StaticBody2D" parent="." unique_id=1198364526]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6" unique_id=137737499]
-position = Vector2(912.25, 142.5)
-shape = SubResource("RectangleShape2D_bf53h")
-
-[node name="Wall7" type="StaticBody2D" parent="." unique_id=916150390]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall7" unique_id=2138712243]
-position = Vector2(815.75, 93.5)
-shape = SubResource("RectangleShape2D_71axn")
-
-[node name="Wall8" type="StaticBody2D" parent="." unique_id=1677984622]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall8" unique_id=1045584117]
-position = Vector2(323.5, 96.75)
-shape = SubResource("RectangleShape2D_dahhg")
-
-[node name="Wall9" type="StaticBody2D" parent="." unique_id=1000479763]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall9" unique_id=1452821263]
-position = Vector2(253, 239)
-shape = SubResource("RectangleShape2D_3so38")
-
-[node name="Wall10" type="StaticBody2D" parent="." unique_id=1935399791]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall10" unique_id=846423775]
-position = Vector2(143, 341)
-shape = SubResource("RectangleShape2D_3cx6b")
 
 [node name="PAUSEbtn" type="TextureButton" parent="." unique_id=1987177688]
 offset_left = 1169.0

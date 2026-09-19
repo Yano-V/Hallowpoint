@@ -10,10 +10,6 @@ func _on_save_btn_pressed() -> void:
 	print("Game saved!")
 
 
-func _on_quit_btn_pressed() -> void:
-	$QuitConfirmation.popup_centered()
-
-
 func _on_mainmenu_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
@@ -22,5 +18,13 @@ func _on_resume_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
 
-func _on_quit_confirmation_confirmed() -> void:
+func _on_quit_btn_pressed() -> void:
+	$QuitConfirmation.show()
+
+
+func _on_yesbtn_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_nobtn_pressed() -> void:
+	$QuitConfirmation.hide()

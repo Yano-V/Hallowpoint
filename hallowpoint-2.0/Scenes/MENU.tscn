@@ -2,11 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="1_vfnt7"]
 [ext_resource type="Script" uid="uid://dq8ai02qnav53" path="res://Scripts/MENU.gd" id="1_vlheg"]
-[ext_resource type="Texture2D" uid="uid://coshegwnl0bqn" path="res://Assets/Images/RESUMEbtn (1).png" id="3_7e7a2"]
+[ext_resource type="Script" uid="uid://kdocqvojnaye" path="res://Scripts/Buttons/Menu/saveBtn.gd" id="4_uvl26"]
 [ext_resource type="Texture2D" uid="uid://c25khyvu6vcim" path="res://Assets/Images/SAVEbtn-2.png" id="5_7e7a2"]
 [ext_resource type="Texture2D" uid="uid://fipjcjeflmp5" path="res://Assets/Images/SETTINGSbtn-2.png" id="5_cn24f"]
 [ext_resource type="Texture2D" uid="uid://bvnm1c1n7kky5" path="res://Assets/Images/MAINMENUbtn-2.png" id="6_cn24f"]
+[ext_resource type="Script" uid="uid://cx4ubwe2kt2de" path="res://Scripts/Buttons/Menu/settingsBtn.gd" id="6_gjslf"]
+[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/ICONS/BACK Button2.png" id="7_7e7a2"]
 [ext_resource type="Texture2D" uid="uid://ckt1yrh7csyov" path="res://Assets/Images/QUITbtn-2.png" id="7_a3mjc"]
+[ext_resource type="Texture2D" uid="uid://bs053gx5lnh6w" path="res://Assets/Images/QUITGAME-ui.png" id="8_0jd06"]
+[ext_resource type="Script" uid="uid://mqgn8ddxtgb7" path="res://Scripts/Buttons/Menu/mainmenuBtn.gd" id="8_6e6ba"]
+[ext_resource type="Texture2D" uid="uid://cnd7bwm0asot1" path="res://Assets/Images/YESbtn.png" id="9_uvl26"]
+[ext_resource type="Texture2D" uid="uid://k3j0ubw6jqj2" path="res://Assets/Images/NObtn.png" id="10_gjslf"]
+[ext_resource type="Script" uid="uid://doobjlliutps2" path="res://Scripts/Buttons/Menu/quitBtn.gd" id="10_i7smx"]
+[ext_resource type="Script" uid="uid://dd4nv47ocpy5v" path="res://Scripts/Buttons/Menu/back2Btn.gd" id="12_ivmq2"]
 
 [node name="MENU" type="Control" unique_id=873905108]
 layout_mode = 3
@@ -34,59 +42,95 @@ metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=496279987]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 128.0
-offset_right = 1024.0
-offset_bottom = 640.0
+offset_left = 408.0
+offset_top = 120.0
+offset_right = 874.0
+offset_bottom = 632.0
 metadata/_edit_lock_ = true
-
-[node name="RESUMEbtn" type="TextureButton" parent="Panel" unique_id=1237102702]
-layout_mode = 0
-offset_left = 231.0
-offset_top = 80.0
-offset_right = 539.0
-offset_bottom = 157.0
-texture_normal = ExtResource("3_7e7a2")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="SAVEbtn" type="TextureButton" parent="Panel" unique_id=607502419]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 163.0
-offset_right = 540.0
-offset_bottom = 237.0
+offset_left = 80.0
+offset_top = 134.0
+offset_right = 390.0
+offset_bottom = 208.0
 texture_normal = ExtResource("5_7e7a2")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_uvl26")
 
 [node name="SETTINGSbtn" type="TextureButton" parent="Panel" unique_id=1440144403]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 243.0
-offset_right = 541.0
-offset_bottom = 322.0
+offset_left = 80.0
+offset_top = 207.0
+offset_right = 390.0
+offset_bottom = 286.0
 texture_normal = ExtResource("5_cn24f")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("6_gjslf")
 
 [node name="MAINMENUbtn" type="TextureButton" parent="Panel" unique_id=1653118018]
+visible = false
 layout_mode = 0
-offset_left = 231.0
-offset_top = 326.0
-offset_right = 542.0
-offset_bottom = 404.0
+offset_left = 80.0
+offset_top = 286.0
+offset_right = 391.0
+offset_bottom = 364.0
 texture_normal = ExtResource("6_cn24f")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_6e6ba")
 
 [node name="QUITbtn" type="TextureButton" parent="Panel" unique_id=1925906853]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 408.0
-offset_right = 542.0
-offset_bottom = 484.0
+offset_left = 80.0
+offset_top = 285.0
+offset_right = 390.0
+offset_bottom = 361.0
 texture_normal = ExtResource("7_a3mjc")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_i7smx")
+
+[node name="BackBtn" type="TextureButton" parent="." unique_id=464588346]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 122.0
+offset_bottom = 112.0
+texture_normal = ExtResource("7_7e7a2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("12_ivmq2")
+
+[node name="QuitConfirmation" type="TextureRect" parent="." unique_id=63358648]
+visible = false
+layout_mode = 0
+offset_left = 340.0
+offset_top = 230.0
+offset_right = 944.0
+offset_bottom = 522.0
+texture = ExtResource("8_0jd06")
+expand_mode = 1
+
+[node name="Yesbtn" type="TextureButton" parent="QuitConfirmation" unique_id=1198982476]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 146.0
+offset_right = 284.0
+offset_bottom = 220.0
+texture_normal = ExtResource("9_uvl26")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Nobtn" type="TextureButton" parent="QuitConfirmation" unique_id=974764498]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 146.0
+offset_right = 484.0
+offset_bottom = 220.0
+texture_normal = ExtResource("10_gjslf")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -94,3 +138,6 @@ stretch_mode = 0
 [connection signal="pressed" from="Panel/SETTINGSbtn" to="." method="_on_setting_sbtn_pressed"]
 [connection signal="pressed" from="Panel/MAINMENUbtn" to="." method="_on_mainmenu_btn_pressed"]
 [connection signal="pressed" from="Panel/QUITbtn" to="." method="_on_qui_tbtn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="QuitConfirmation/Yesbtn" to="." method="_on_yesbtn_pressed"]
+[connection signal="pressed" from="QuitConfirmation/Nobtn" to="." method="_on_nobtn_pressed"]

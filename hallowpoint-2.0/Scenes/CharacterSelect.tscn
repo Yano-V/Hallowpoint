@@ -3,11 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="1_fxt7g"]
 [ext_resource type="Script" uid="uid://6cbbb8i6rsl6" path="res://Scripts/CharacterSelect.gd" id="1_i0prf"]
 [ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="3_jbnqh"]
-[ext_resource type="Texture2D" uid="uid://ddsqtr3ecl0f2" path="res://Assets/Images/CHARACTERS/placeholder.png" id="4_8cwx3"]
-[ext_resource type="Texture2D" uid="uid://bybp1y12s5mdt" path="res://Assets/Images/CHARACTERS/BOY.png" id="5_ydguf"]
-[ext_resource type="Texture2D" uid="uid://md1dk5w7j2gm" path="res://Assets/Images/CHARACTERS/GIRL.png" id="6_vfpf0"]
-[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/BACK Button2.png" id="7_8cwx3"]
+[ext_resource type="Texture2D" uid="uid://i8yvvsmh0xf6" path="res://Assets/Images/CHARACTERS/BOY-normal.png" id="4_8cwx3"]
+[ext_resource type="Texture2D" uid="uid://ddwmwra848fmh" path="res://Assets/Images/CHARACTERS/BOY-hover2.png" id="4_jbnqh"]
+[ext_resource type="Texture2D" uid="uid://c3gd5lrjprf7e" path="res://Assets/Images/CHARACTERS/BOY-normal2.png" id="4_ydguf"]
+[ext_resource type="Texture2D" uid="uid://thusgv76svwj" path="res://Assets/Images/CHARACTERS/GIRL-hover2.png" id="5_8cwx3"]
+[ext_resource type="Texture2D" uid="uid://bpo7a2yec80wx" path="res://Assets/Images/CHARACTERS/GIRL-normal2.png" id="6_ydguf"]
+[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/ICONS/BACK Button2.png" id="7_8cwx3"]
 [ext_resource type="Texture2D" uid="uid://bsopa6uoj2pfq" path="res://Assets/Images/CHARACTERS/usernamePH.png" id="8_8cwx3"]
+[ext_resource type="Script" uid="uid://dxdi5vf663gch" path="res://Scripts/BoyBtn.gd" id="10_adlwc"]
+[ext_resource type="Script" uid="uid://bkhidcgtbs2lf" path="res://Scripts/GirlBtn.gd" id="12_1a83k"]
+[ext_resource type="Texture2D" uid="uid://c4rdm543e4lit" path="res://Assets/Images/CHARACTERS/GIRL-normal.png" id="13_un5gs"]
+[ext_resource type="Script" uid="uid://rfwn2fhd4uif" path="res://Scripts/Buttons/CHARSELECT/back4Btn.gd" id="14_un5gs"]
 
 [node name="CharacterSelect" type="Control" unique_id=2121065108]
 layout_mode = 3
@@ -35,63 +41,100 @@ metadata/_edit_lock_ = true
 
 [node name="Title" type="Label" parent="." unique_id=709660204]
 layout_mode = 0
-offset_left = 354.0
-offset_top = 67.0
-offset_right = 926.0
-offset_bottom = 127.0
+offset_left = 296.0
+offset_top = 32.0
+offset_right = 982.0
+offset_bottom = 105.0
 theme_override_fonts/font = ExtResource("3_jbnqh")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 60
 text = "CHOOSE YOUR CHARACTER"
 
 [node name="BOY" type="TextureButton" parent="." unique_id=2063108995]
+visible = false
 layout_mode = 0
-offset_left = 128.0
+offset_left = 168.0
 offset_top = 128.0
-offset_right = 576.0
+offset_right = 616.0
 offset_bottom = 632.0
 toggle_mode = true
-texture_normal = ExtResource("4_8cwx3")
+texture_normal = ExtResource("4_ydguf")
+texture_hover = ExtResource("4_jbnqh")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="BOYimg" type="TextureRect" parent="BOY" unique_id=953646765]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 52.0
-offset_right = 400.0
-offset_bottom = 463.0
-texture = ExtResource("5_ydguf")
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 32.0
+offset_right = -31.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jbnqh")
 expand_mode = 1
 
 [node name="GIRL" type="TextureButton" parent="." unique_id=1341815682]
+visible = false
 layout_mode = 0
-offset_left = 704.0
+offset_left = 664.0
 offset_top = 128.0
-offset_right = 1152.0
+offset_right = 1112.0
 offset_bottom = 632.0
 toggle_mode = true
-texture_normal = ExtResource("4_8cwx3")
+texture_normal = ExtResource("6_ydguf")
+texture_hover = ExtResource("5_8cwx3")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="GIRLimg" type="TextureRect" parent="GIRL" unique_id=579353398]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 52.0
-offset_right = 405.0
-offset_bottom = 463.0
-texture = ExtResource("6_vfpf0")
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 32.0
+offset_right = -30.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8cwx3")
 expand_mode = 1
 
-[node name="BackBtn" type="TextureButton" parent="." unique_id=1972129697]
+[node name="BOYbtn" type="TextureButton" parent="." unique_id=1488547293]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 23.0
-offset_right = 122.0
-offset_bottom = 112.0
-texture_normal = ExtResource("7_8cwx3")
-ignore_texture_size = true
-stretch_mode = 0
+offset_left = 168.0
+offset_top = 128.0
+offset_right = 616.0
+offset_bottom = 632.0
+pivot_offset = Vector2(224, 252)
+script = ExtResource("10_adlwc")
+
+[node name="BOY" type="TextureRect" parent="BOYbtn" unique_id=1149622093]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 504.0
+texture = ExtResource("4_8cwx3")
+expand_mode = 1
+
+[node name="GIRLbtn" type="TextureButton" parent="." unique_id=392521139]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 128.0
+offset_right = 1112.0
+offset_bottom = 632.0
+script = ExtResource("12_1a83k")
+
+[node name="GIRL" type="TextureRect" parent="GIRLbtn" unique_id=537980468]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 504.0
+texture = ExtResource("13_un5gs")
+expand_mode = 1
 
 [node name="UNPopUp" type="TextureRect" parent="." unique_id=416604025]
 visible = false
@@ -115,15 +158,37 @@ placeholder_text = "Enter your name..."
 
 [node name="ENTERbtn" type="Button" parent="UNPopUp" unique_id=1681789844]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 174.0
-offset_right = 366.0
-offset_bottom = 230.0
+offset_left = 91.0
+offset_top = 175.0
+offset_right = 259.0
+offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("3_jbnqh")
 theme_override_font_sizes/font_size = 30
 text = "CONFIRM"
 
-[connection signal="pressed" from="BOY" to="." method="_on_boy_pressed"]
-[connection signal="pressed" from="GIRL" to="." method="_on_girl_pressed"]
-[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[node name="Cancelbtn" type="Button" parent="UNPopUp" unique_id=1646384101]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 175.0
+offset_right = 478.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("3_jbnqh")
+theme_override_font_sizes/font_size = 30
+text = "CANCEL"
+
+[node name="BackBtn" type="TextureButton" parent="." unique_id=1972129697]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 122.0
+offset_bottom = 112.0
+texture_normal = ExtResource("7_8cwx3")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_un5gs")
+
+[connection signal="pressed" from="BOYbtn" to="." method="_on_boybtn_pressed"]
+[connection signal="pressed" from="GIRLbtn" to="." method="_on_girlbtn_pressed"]
 [connection signal="pressed" from="UNPopUp/ENTERbtn" to="." method="_on_ente_rbtn_pressed"]
+[connection signal="pressed" from="UNPopUp/Cancelbtn" to="." method="_on_cancelbtn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]

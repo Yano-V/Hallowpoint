@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="2_aieck"]
 [ext_resource type="Texture2D" uid="uid://yb2413nfgvp0" path="res://Assets/Images/aboutbg2.png" id="3_5puu0"]
 [ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="4_a3lmr"]
-[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/BACK Button2.png" id="5_k156c"]
+[ext_resource type="Texture2D" uid="uid://b1vnnyx81g2w8" path="res://Assets/Images/Tutorialbtn.png" id="5_5puu0"]
+[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/ICONS/BACK Button2.png" id="5_k156c"]
+[ext_resource type="Script" uid="uid://c8fiyi7hoahgy" path="res://Scripts/Buttons/TUTORIAL/tutorialBtn.gd" id="6_a3lmr"]
+[ext_resource type="Script" uid="uid://crxa8bl6yfl2a" path="res://Scripts/Buttons/TUTORIAL/back3Btn.gd" id="8_k156c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbebw"]
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.6666667)
@@ -70,33 +73,26 @@ theme_override_font_sizes/font_size = 25
 text = "An atmospheric narrative-driven adventure set in the remnants of a ruined world. Players take on the role of an investigator navigating desolate terrain, piecing together fragments of a forgotten past, and uncovering dark secrets hidden beneath the ash. Built using the Godot Engine, this project follows structured software engineering principles, agile development workflows, and clean code architecture."
 autowrap_mode = 3
 
-[node name="Title" type="Label" parent="CreditsPanel" unique_id=67127654]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 67.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 65
-text = "HALLOWPOINT"
+[node name="TutorialBtn" type="TextureButton" parent="CreditsPanel" unique_id=212997947]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 387.0
+offset_right = 588.0
+offset_bottom = 462.0
+texture_normal = ExtResource("5_5puu0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_a3lmr")
 
-[node name="Subtitle" type="Label" parent="CreditsPanel" unique_id=1751324515]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -123.0
-offset_top = 84.0
-offset_right = 123.0
-offset_bottom = 110.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.60933006, 0.6093301, 0.60933006, 1)
-theme_override_font_sizes/font_size = 27
-text = "Restore what was forgotten."
+[node name="DarkOverlay" type="ColorRect" parent="CreditsPanel/TutorialBtn" unique_id=857291950]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 273.0
+offset_bottom = 74.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+metadata/_edit_lock_ = true
 
 [node name="BackBtn" type="TextureButton" parent="." unique_id=15901473]
 layout_mode = 0
@@ -107,9 +103,11 @@ offset_bottom = 112.0
 texture_normal = ExtResource("5_k156c")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_k156c")
 
 [node name="CreditsMusic" type="AudioStreamPlayer2D" parent="." unique_id=228909024]
 
 [node name="CreditsAnimation" type="AnimationPlayer" parent="." unique_id=711073500]
 
+[connection signal="pressed" from="CreditsPanel/TutorialBtn" to="." method="_on_tutorial_btn_pressed"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]

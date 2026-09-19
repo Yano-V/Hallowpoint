@@ -25,6 +25,8 @@ GameState="*uid://5opvn05w7ctm"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://ce5oeichvkat5"
+mouse_cursor/custom_image_hotspot=Vector2(3.39, 5.76)
 
 [dotnet]
 

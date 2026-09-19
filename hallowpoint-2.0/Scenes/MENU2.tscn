@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://rpvdvmc767xq" path="res://Scripts/MENU2.gd" id="1_7bom4"]
 [ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="2_7buiw"]
 [ext_resource type="Texture2D" uid="uid://coshegwnl0bqn" path="res://Assets/Images/RESUMEbtn (1).png" id="3_mg63n"]
+[ext_resource type="Script" uid="uid://d1gxr63ij0ldx" path="res://Scripts/Buttons/Menu2/ResumeBtn.gd" id="4_1582f"]
 [ext_resource type="Texture2D" uid="uid://c25khyvu6vcim" path="res://Assets/Images/SAVEbtn-2.png" id="4_fqqvg"]
+[ext_resource type="Script" uid="uid://der0s3ij2p3ki" path="res://Scripts/Buttons/Menu2/save2Btn.gd" id="6_023g3"]
 [ext_resource type="Texture2D" uid="uid://bvnm1c1n7kky5" path="res://Assets/Images/MAINMENUbtn-2.png" id="6_uytgw"]
 [ext_resource type="Texture2D" uid="uid://ckt1yrh7csyov" path="res://Assets/Images/QUITbtn-2.png" id="7_023g3"]
-[ext_resource type="Texture2D" uid="uid://bsopa6uoj2pfq" path="res://Assets/Images/CHARACTERS/usernamePH.png" id="7_mg63n"]
-[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="8_fqqvg"]
-[ext_resource type="Texture2D" uid="uid://bm00wh256hd0s" path="res://Assets/Images/buttonPH.png" id="9_1582f"]
+[ext_resource type="Texture2D" uid="uid://bs053gx5lnh6w" path="res://Assets/Images/QUITGAME-ui.png" id="7_mg63n"]
+[ext_resource type="Texture2D" uid="uid://cnd7bwm0asot1" path="res://Assets/Images/YESbtn.png" id="8_fqqvg"]
+[ext_resource type="Script" uid="uid://71sul6ypg8k1" path="res://Scripts/Buttons/Menu2/mainmenu2Btn.gd" id="8_vsqpi"]
+[ext_resource type="Texture2D" uid="uid://k3j0ubw6jqj2" path="res://Assets/Images/NObtn.png" id="9_1582f"]
+[ext_resource type="Script" uid="uid://bojf5gqlnm7lp" path="res://Scripts/Buttons/Menu2/quit2Btn.gd" id="10_023g3"]
 
 [node name="MENU2" type="Control" unique_id=873905108]
 layout_mode = 3
@@ -36,140 +40,89 @@ metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=496279987]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 128.0
-offset_right = 1024.0
-offset_bottom = 640.0
+offset_left = 408.0
+offset_top = 120.0
+offset_right = 874.0
+offset_bottom = 632.0
 metadata/_edit_lock_ = true
 
 [node name="RESUMEbtn" type="TextureButton" parent="Panel" unique_id=1237102702]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 126.0
-offset_right = 539.0
-offset_bottom = 203.0
+offset_left = 80.0
+offset_top = 120.0
+offset_right = 388.0
+offset_bottom = 197.0
 texture_normal = ExtResource("3_mg63n")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_1582f")
 
 [node name="SAVEbtn" type="TextureButton" parent="Panel" unique_id=607502419]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 206.0
-offset_right = 540.0
-offset_bottom = 280.0
+offset_left = 80.0
+offset_top = 197.0
+offset_right = 390.0
+offset_bottom = 271.0
 texture_normal = ExtResource("4_fqqvg")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("6_023g3")
 
 [node name="MAINMENUbtn" type="TextureButton" parent="Panel" unique_id=1653118018]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 283.0
-offset_right = 542.0
-offset_bottom = 361.0
+offset_left = 80.0
+offset_top = 271.0
+offset_right = 391.0
+offset_bottom = 349.0
 texture_normal = ExtResource("6_uytgw")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_vsqpi")
 
 [node name="QUITbtn" type="TextureButton" parent="Panel" unique_id=1925906853]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 366.0
-offset_right = 542.0
-offset_bottom = 442.0
+offset_left = 80.0
+offset_top = 347.0
+offset_right = 390.0
+offset_bottom = 423.0
 texture_normal = ExtResource("7_023g3")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("10_023g3")
 
-[node name="QuitConfirmation" type="ConfirmationDialog" parent="." unique_id=1578558759]
-title = "Quit Game?"
-ok_button_text = "CONFIRM"
-dialog_text = "Are you sure you're quitting the game?"
-
-[node name="QuitPopUp" type="Control" parent="." unique_id=1029696045]
+[node name="QuitConfirmation" type="TextureRect" parent="." unique_id=842707108]
 visible = false
-anchors_preset = 0
-offset_left = 336.0
-offset_top = 271.0
-offset_right = 932.0
-offset_bottom = 531.0
-metadata/_edit_lock_ = true
-
-[node name="QuitBackground" type="TextureRect" parent="QuitPopUp" unique_id=1038488055]
 layout_mode = 0
-offset_right = 596.0
-offset_bottom = 260.0
+offset_left = 340.0
+offset_top = 230.0
+offset_right = 944.0
+offset_bottom = 522.0
 texture = ExtResource("7_mg63n")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
-[node name="TITLE" type="Label" parent="QuitPopUp" unique_id=1689652487]
+[node name="Yesbtn" type="TextureButton" parent="QuitConfirmation" unique_id=1391954139]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 54.0
-offset_right = 384.0
-offset_bottom = 116.0
-theme_override_colors/font_color = Color(0.31764707, 0.05882353, 0.078431375, 1)
-theme_override_fonts/font = ExtResource("8_fqqvg")
-theme_override_font_sizes/font_size = 35
-text = "QUIT GAME"
-
-[node name="Confirmation" type="Label" parent="QuitPopUp" unique_id=929602502]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 101.0
-offset_right = 538.0
-offset_bottom = 167.0
-theme_override_colors/font_color = Color(0.4507327, 0.13307583, 0.12329129, 1)
-theme_override_fonts/font = ExtResource("8_fqqvg")
-theme_override_font_sizes/font_size = 25
-text = "Are you sure you're quitting the game?"
-
-[node name="YESbtn" type="TextureButton" parent="QuitPopUp" unique_id=540863999]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 151.0
-offset_right = 244.0
-offset_bottom = 217.0
-texture_normal = ExtResource("9_1582f")
+offset_left = 116.0
+offset_top = 146.0
+offset_right = 284.0
+offset_bottom = 220.0
+texture_normal = ExtResource("8_fqqvg")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="YESlbl" type="Label" parent="QuitPopUp/YESbtn" unique_id=1318632291]
+[node name="Nobtn" type="TextureButton" parent="QuitConfirmation" unique_id=405167759]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 16.0
-offset_right = 80.0
-offset_bottom = 62.0
-theme_override_colors/font_color = Color(0.4509804, 0.13333334, 0.12156863, 1)
-theme_override_fonts/font = ExtResource("8_fqqvg")
-theme_override_font_sizes/font_size = 30
-text = "YES"
-
-[node name="NObtn" type="TextureButton" parent="QuitPopUp" unique_id=1727665790]
-layout_mode = 0
-offset_left = 337.0
-offset_top = 151.0
-offset_right = 445.0
-offset_bottom = 217.0
+offset_left = 316.0
+offset_top = 146.0
+offset_right = 484.0
+offset_bottom = 220.0
 texture_normal = ExtResource("9_1582f")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="NOlbl" type="Label" parent="QuitPopUp/NObtn" unique_id=196720991]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 16.0
-offset_right = 72.0
-offset_bottom = 53.0
-theme_override_colors/font_color = Color(0.4509804, 0.13333334, 0.12156863, 1)
-theme_override_fonts/font = ExtResource("8_fqqvg")
-theme_override_font_sizes/font_size = 30
-text = "NO"
 
 [connection signal="pressed" from="Panel/RESUMEbtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="Panel/SAVEbtn" to="." method="_on_save_btn_pressed"]
 [connection signal="pressed" from="Panel/MAINMENUbtn" to="." method="_on_mainmenu_btn_pressed"]
 [connection signal="pressed" from="Panel/QUITbtn" to="." method="_on_quit_btn_pressed"]
-[connection signal="confirmed" from="QuitConfirmation" to="." method="_on_quit_confirmation_confirmed"]
+[connection signal="pressed" from="QuitConfirmation/Yesbtn" to="." method="_on_yesbtn_pressed"]
+[connection signal="pressed" from="QuitConfirmation/Nobtn" to="." method="_on_nobtn_pressed"]

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cjaigbw5ekkhq" path="res://Scripts/SETTINGS.gd" id="1_26cor"]
 [ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="2_08swt"]
-[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/BACK Button2.png" id="3_ap38j"]
+[ext_resource type="Script" uid="uid://bxq01dmrooj6p" path="res://Scripts/Buttons/Settings/backBtn.gd" id="3_4aiq7"]
+[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/ICONS/BACK Button2.png" id="3_ap38j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flfri"]
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.6666667)
@@ -189,9 +190,16 @@ offset_left = 29.0
 offset_top = 23.0
 offset_right = 122.0
 offset_bottom = 112.0
-texture_normal = ExtResource("3_ap38j")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("3_4aiq7")
+
+[node name="BACK" type="TextureRect" parent="BackBtn" unique_id=552560435]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 89.0
+texture = ExtResource("3_ap38j")
+expand_mode = 1
 
 [node name="AmbientAudio" type="AudioStreamPlayer2D" parent="." unique_id=42000722]
 bus = &"Music"
