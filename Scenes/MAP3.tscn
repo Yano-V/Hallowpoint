@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d252to2dc705b"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_vfvji"]
+[ext_resource type="Texture2D" uid="uid://ds86xvejesb27" path="res://Assets/Images/MAP/SFC Lobby.png" id="2_vfvji"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="3_vfvji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tal1i"]
+size = Vector2(189.5, 81)
+
+[node name="Map3" type="Node2D" unique_id=570549972]
+script = ExtResource("1_vfvji")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=73820049]
+position = Vector2(652, 362)
+scale = Vector2(1.1705122, 0.9062224)
+texture = ExtResource("2_vfvji")
+
+[node name="Ground" type="ColorRect" parent="." unique_id=105232201]
+visible = false
+offset_right = 640.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.78431374)
+metadata/_edit_lock_ = true
+
+[node name="To2nd" type="Area2D" parent="." unique_id=935119564]
+position = Vector2(1023, 143)
+script = ExtResource("3_vfvji")
+target_scene = "uid://cngi3l0cwhjey"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To2nd" unique_id=466444197]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_tal1i")
+
+[node name="ToQUAD" type="Area2D" parent="." unique_id=1619749602]
+position = Vector2(660, 63)
+scale = Vector2(1.4463539, 1)
+script = ExtResource("3_vfvji")
+target_scene = "uid://d0gvsvxo0q5t3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToQUAD" unique_id=1861035016]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_tal1i")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1534432258]
+position = Vector2(1132, 440)
+
+[node name="ToSPAWN" type="Area2D" parent="." unique_id=1797429464]
+position = Vector2(1268, 498.00003)
+scale = Vector2(0.2669104, 2.9862585)
+script = ExtResource("3_vfvji")
+target_scene = "uid://b657u28buumte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSPAWN" unique_id=1172021344]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_tal1i")
+
+[connection signal="body_entered" from="To2nd" to="To2nd" method="_on_body_entered"]
+[connection signal="body_entered" from="ToQUAD" to="ToQUAD" method="_on_body_entered"]
+[connection signal="body_entered" from="ToSPAWN" to="ToSPAWN" method="_on_body_entered"]

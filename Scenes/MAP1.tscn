@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b657u28buumte"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_m44ko"]
+[ext_resource type="Texture2D" uid="uid://cg2p8t346r155" path="res://Assets/Images/MAP/Spawn Point.jpg" id="1_puwg3"]
+[ext_resource type="Script" uid="uid://bjk107v2kwfhi" path="res://Scripts/SceneTransition.gd" id="2_puwg3"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="4_erabh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78wp3"]
+size = Vector2(189.5, 81)
+
+[node name="Map1" type="Node2D" unique_id=1340444013 groups=["Player"]]
+script = ExtResource("1_m44ko")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1698340427]
+position = Vector2(641, 361)
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("1_puwg3")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="ColorRect" parent="." unique_id=1960563651]
+visible = false
+offset_right = 640.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.78431374)
+metadata/_edit_lock_ = true
+
+[node name="ToLB" type="Area2D" parent="." unique_id=1786396040]
+position = Vector2(32, 266)
+script = ExtResource("2_puwg3")
+target_scene = "uid://desl42mh31a0f"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToLB" unique_id=1670321184]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_78wp3")
+
+[node name="ToSFC" type="Area2D" parent="." unique_id=163594634]
+position = Vector2(29, 614)
+script = ExtResource("4_erabh")
+target_scene = "uid://d252to2dc705b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSFC" unique_id=1980401913]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_78wp3")
+
+[node name="BigTree" type="Sprite2D" parent="." unique_id=749701586]
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1846293132 groups=["Player"]]
+position = Vector2(551, 430)
+
+[node name="ToTYK" type="Area2D" parent="." unique_id=1184487108]
+position = Vector2(495, 690)
+scale = Vector2(2.44, 1)
+script = ExtResource("2_puwg3")
+target_scene = "uid://ceinri84tflvy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToTYK" unique_id=1857800901]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_78wp3")
+
+[connection signal="body_entered" from="ToLB" to="ToLB" method="_on_body_entered"]
+[connection signal="body_entered" from="ToSFC" to="ToSFC" method="_on_body_entered"]
+[connection signal="body_entered" from="ToTYK" to="ToTYK" method="_on_body_entered"]
