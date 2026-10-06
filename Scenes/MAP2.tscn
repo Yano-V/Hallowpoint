@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ceinri84tflvy"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_7ms5d"]
+[ext_resource type="Texture2D" uid="uid://bv87u5u4t16xo" path="res://Assets/Images/MAP/TYK Garden.jpg" id="1_lt2uc"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="3_7ms5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt2uc"]
+size = Vector2(575, 41)
+
+[node name="Map2" type="Node2D" unique_id=1848405952]
+script = ExtResource("1_7ms5d")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=469955227]
+position = Vector2(641, 361)
+texture = ExtResource("1_lt2uc")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1269652340]
+visible = false
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=923213409 groups=["Player"]]
+position = Vector2(261, 51)
+
+[node name="Door Transition" type="Area2D" parent="." unique_id=509143258]
+script = ExtResource("3_7ms5d")
+target_scene = "uid://b657u28buumte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Transition" unique_id=1394624683]
+position = Vector2(439.5, -31.5)
+shape = SubResource("RectangleShape2D_lt2uc")

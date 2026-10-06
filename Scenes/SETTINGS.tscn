@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://bopbs38vmf11m"]
+
+[ext_resource type="Texture2D" uid="uid://vlgpqtwoaog" path="res://Assets/Images/UEsampleAIsettingsbg2.png" id="1_4hxq3"]
+[ext_resource type="Script" uid="uid://cjaigbw5ekkhq" path="res://Scripts/Settings.gd" id="1_flfri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flfri"]
+bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.6666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrknh"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1nw0"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjqtt"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Settings" type="Control" unique_id=2123631572]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_flfri")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2117823833]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1254.0
+texture = ExtResource("1_4hxq3")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=788049467]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1254.0
+color = Color(6.180691e-05, 6.180692e-05, 6.180691e-05, 0.29411766)
+
+[node name="SettingsPanel" type="Panel" parent="." unique_id=1947420410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -325.0
+offset_right = 250.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_flfri")
+
+[node name="Title" type="Label" parent="SettingsPanel" unique_id=2006446677]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.5
+offset_top = 7.0
+offset_right = 103.5
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "SETTINGS"
+
+[node name="Subtitle" type="Label" parent="SettingsPanel" unique_id=931614968]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.0
+offset_top = 66.0
+offset_right = 103.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.60784316, 0.60784316, 0.60784316, 1)
+theme_override_font_sizes/font_size = 18
+text = "Adjust your experience."
+
+[node name="SettingsList" type="VBoxContainer" parent="SettingsPanel" unique_id=1454936688]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = -172.0
+offset_right = 110.5
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="MasterVolume" type="Label" parent="SettingsPanel/SettingsList" unique_id=1756863347]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="SettingsPanel/SettingsList/MasterVolume" unique_id=967411170]
+custom_minimum_size = Vector2(320, 20)
+layout_mode = 0
+offset_left = -43.0
+offset_top = 38.0
+offset_right = 277.0
+offset_bottom = 58.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_yrknh")
+value = 100.0
+
+[node name="MusicVolume" type="Label" parent="SettingsPanel/SettingsList" unique_id=1417181422]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "   Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/SettingsList/MusicVolume" unique_id=1666305956]
+custom_minimum_size = Vector2(320, 20)
+layout_mode = 0
+offset_left = -41.0
+offset_top = 38.0
+offset_right = 279.0
+offset_bottom = 58.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_w1nw0")
+value = 100.0
+
+[node name="SFXVolume" type="Label" parent="SettingsPanel/SettingsList" unique_id=1450327855]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "     SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/SettingsList/SFXVolume" unique_id=1838133045]
+custom_minimum_size = Vector2(320, 20)
+layout_mode = 0
+offset_left = -39.0
+offset_top = 39.0
+offset_right = 281.0
+offset_bottom = 59.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_mjqtt")
+value = 100.0
+
+[node name="Fullscreen" type="CheckBox" parent="SettingsPanel/SettingsList" unique_id=1412114219]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9098039, 0.7764706, 0.41568628, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7882353, 0.63529414, 0.24705882, 1)
+theme_override_colors/font_disabled_color = Color(0.53333336, 0.53333336, 0.53333336, 1)
+theme_override_font_sizes/font_size = 30
+text = "  Fullscreen"
+
+[node name="ScreenShake" type="CheckBox" parent="SettingsPanel/SettingsList" unique_id=1214920280]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9098039, 0.7764706, 0.41568628, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7882353, 0.63529414, 0.24705882, 1)
+theme_override_colors/font_disabled_color = Color(0.53333336, 0.53333336, 0.53333336, 1)
+theme_override_font_sizes/font_size = 30
+text = "Screen Shake"
+
+[node name="BackButton" type="Button" parent="SettingsPanel" unique_id=926941580]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 209.5
+offset_right = 50.0
+offset_bottom = 252.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[node name="AmbientAudio" type="AudioStreamPlayer2D" parent="." unique_id=42000722]
+
+[node name="SettingsAnimations" type="AnimationPlayer" parent="." unique_id=2126250399]
+
+[connection signal="pressed" from="SettingsPanel/BackButton" to="." method="_on_back_button_pressed"]

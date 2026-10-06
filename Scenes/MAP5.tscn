@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d0gvsvxo0q5t3"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_b5dcd"]
+[ext_resource type="Texture2D" uid="uid://cetrf2ysbjt56" path="res://Assets/Images/MAP/Quad.png" id="1_n3cep"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="2_b5dcd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os4ii"]
+size = Vector2(189.5, 81)
+
+[node name="Maps5" type="Node2D" unique_id=1552161402]
+script = ExtResource("1_b5dcd")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=873382325]
+position = Vector2(656, 394)
+scale = Vector2(1.1705122, 0.9062224)
+texture = ExtResource("1_n3cep")
+flip_h = true
+
+[node name="Ground" type="ColorRect" parent="." unique_id=1420966054]
+visible = false
+offset_right = 640.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.78431374)
+metadata/_edit_lock_ = true
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=314504437 groups=["Player"]]
+position = Vector2(653, 640)
+
+[node name="ToSFC" type="Area2D" parent="." unique_id=1269939150]
+position = Vector2(652.00006, 721)
+scale = Vector2(1.6424165, 0.49495116)
+script = ExtResource("2_b5dcd")
+target_scene = "uid://d252to2dc705b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSFC" unique_id=803143135]
+position = Vector2(0.60883594, -6.061247)
+shape = SubResource("RectangleShape2D_os4ii")
+
+[connection signal="body_entered" from="ToSFC" to="ToSFC" method="_on_body_entered"]
