@@ -6,6 +6,7 @@ func _on_bell_timer_timeout() -> void:
 	$BellSound.play() # Replace with function body.
 
 func _on_star_tbutton_pressed() -> void:
+	$ClickSound.play()
 	get_tree().change_scene_to_file("res://Scenes/CharacterSelect.tscn")
 
 
