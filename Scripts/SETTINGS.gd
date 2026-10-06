@@ -1,51 +1,15 @@
 extends Control
 
-var return_to := "main_menu"
 
-const SETTINGS_FILE = "user://settings.cfg"
-
-@onready var master_slider = $SettingsPanel/SettingsList/MasterVolume/MasterSlider
-@onready var music_slider = $SettingsPanel/SettingsList/MusicVolume/MusicSlider
-@onready var sfx_slider = $SettingsPanel/SettingsList/SFXVolume/SFXSlider
-
-
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_settings()
+	pass # Replace with function body.
 
 
-func load_settings() -> void:
-	var config = ConfigFile.new()
-
-	if config.load(SETTINGS_FILE) == OK:
-		master_slider.value = config.get_value("volume", "master", 100.0)
-		music_slider.value = config.get_value("volume", "music", 100.0)
-		sfx_slider.value = config.get_value("volume", "sfx", 100.0)
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 
 
-func save_settings() -> void:
-	var config = ConfigFile.new()
-
-	config.set_value("volume", "master", master_slider.value)
-	config.set_value("volume", "music", music_slider.value)
-	config.set_value("volume", "sfx", sfx_slider.value)
-
-	config.save(SETTINGS_FILE)
-
-
-func _on_master_volume_changed(value: float) -> void:
-	save_settings()
-
-
-func _on_music_volume_changed(value: float) -> void:
-	save_settings()
-
-
-func _on_sfx_volume_changed(value: float) -> void:
-	save_settings()
-
-
-func _on_back_btn_pressed():
-	if GameState.settings_return_to == "PAUSE":
-		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Scenes/MENU.tscn")
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn") # Replace with function body.
