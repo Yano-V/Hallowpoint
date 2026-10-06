@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://r1id1bhvns1q" path="res://Scripts/MainMenu.gd" id="1_ghw46"]
 [ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="2_cmrfp"]
-[ext_resource type="AudioStream" uid="uid://cm1kc130c4k17" path="res://Assets/Audio/AmbientAudio.mp3" id="3_8um5k"]
 [ext_resource type="Script" uid="uid://cypbqe2jsf21g" path="res://Scripts/Buttons/MainMenu/StartBtn.gd" id="4_if7li"]
 [ext_resource type="Texture2D" uid="uid://bmoffq0c8213x" path="res://Assets/Images/STARTbtn.png" id="4_koqhg"]
 [ext_resource type="Texture2D" uid="uid://btdekoar0opa" path="res://Assets/Images/GT.png" id="4_loo7a"]
@@ -131,10 +130,6 @@ offset_right = 107.0
 offset_bottom = 107.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.39215687)
-
-[node name="AmbientAudio" type="AudioStreamPlayer2D" parent="." unique_id=1586655404]
-stream = ExtResource("3_8um5k")
-autoplay = true
 
 [node name="BellSound" type="AudioStreamPlayer2D" parent="." unique_id=1558298371]
 stream = ExtResource("4_xim88")

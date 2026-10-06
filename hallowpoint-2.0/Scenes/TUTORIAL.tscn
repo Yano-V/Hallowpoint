@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/ICONS/BACK Button2.png" id="3_iosw0"]
 [ext_resource type="Texture2D" uid="uid://mddjb8xg4tba" path="res://Assets/Images/WASDcontrols.png" id="4_f87s1"]
 [ext_resource type="Texture2D" uid="uid://bvnm1c1n7kky5" path="res://Assets/Images/MAINMENUbtn-2.png" id="6_a3dba"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="7_f87s1"]
 
 [node name="TUTORIAL" type="Control" unique_id=294520334]
 layout_mode = 3
@@ -66,6 +67,17 @@ offset_bottom = 560.0
 texture_normal = ExtResource("6_a3dba")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MoveKeys" type="Label" parent="." unique_id=2068784206]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 423.0
+offset_right = 487.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_f87s1")
+theme_override_font_sizes/font_size = 30
+text = "MOVE"
 
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
 [connection signal="pressed" from="MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

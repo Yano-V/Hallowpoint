@@ -1,5 +1,6 @@
 extends Control
 func _ready():
+	MusicManager.play_music()
 	pass
 
 func _on_bell_timer_timeout() -> void:
