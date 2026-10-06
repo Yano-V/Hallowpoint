@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://2ppp816co100" path="res://Assets/Images/menuBtn.png" id="7_if7li"]
 [ext_resource type="Script" uid="uid://cwsa7msxro3or" path="res://Scripts/Buttons/MainMenu/aboutBtn.gd" id="8_if7li"]
 [ext_resource type="Texture2D" uid="uid://8nbh2f77b3qd" path="res://Assets/Images/aboutBtn.png" id="8_rrcx7"]
+[ext_resource type="AudioStream" uid="uid://xemmi8usmxmk" path="res://Assets/Audio/✅Click.ogg" id="12_rrcx7"]
 
 [node name="MainMenu" type="Control" unique_id=1029258247]
 layout_mode = 3
@@ -144,6 +145,9 @@ bus = &"SFX"
 [node name="BellTimer" type="Timer" parent="." unique_id=2017599314]
 wait_time = 6.0
 autostart = true
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=2050378750]
+stream = ExtResource("12_rrcx7")
 
 [connection signal="pressed" from="STARTbutton" to="." method="_on_star_tbutton_pressed"]
 [connection signal="pressed" from="MENUbutton" to="." method="_on_men_ubutton_pressed"]
