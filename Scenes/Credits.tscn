@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c7vnsdklhrlql"]
+
+[ext_resource type="Texture2D" uid="uid://bxrbddb376725" path="res://Assets/Images/UEsampleAIcreditsbg.png" id="1_i8h6y"]
+[ext_resource type="Script" uid="uid://g82c5xso5o0e" path="res://Scripts/Credits.gd" id="1_xbebw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbebw"]
+bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.6666667)
+
+[node name="Credits" type="Control" unique_id=66253361]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbebw")
+
+[node name="Background" type="TextureRect" parent="." unique_id=624383192]
+custom_minimum_size = Vector2(1280, 1254)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_i8h6y")
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=480513942]
+custom_minimum_size = Vector2(1280, 1254)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.29411766)
+
+[node name="CreditsPanel" type="Panel" parent="." unique_id=2120183033]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -325.0
+offset_right = 300.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbebw")
+
+[node name="Title" type="Label" parent="CreditsPanel" unique_id=67127654]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_right = 175.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 65
+text = "HALLOWPOINT"
+
+[node name="Subtitle" type="Label" parent="CreditsPanel" unique_id=1751324515]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 84.0
+offset_right = 123.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.60933006, 0.6093301, 0.60933006, 1)
+theme_override_font_sizes/font_size = 27
+text = "Restore what was forgotten."
+
+[node name="CreditsList" type="VBoxContainer" parent="CreditsPanel" unique_id=1948442640]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -164.0
+offset_right = 215.5
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="DevelopedBy" type="Label" parent="CreditsPanel/CreditsList" unique_id=1176279198]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "              Developed By"
+
+[node name="Member2" type="Label" parent="CreditsPanel/CreditsList" unique_id=1477697713]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "               Ortega, Aica"
+
+[node name="Member3" type="Label" parent="CreditsPanel/CreditsList" unique_id=159847867]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "       Maghirang, Chris-Ivan"
+
+[node name="Member4" type="Label" parent="CreditsPanel/CreditsList" unique_id=1572868886]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "            Palanas, Vincent"
+
+[node name="Member5" type="Label" parent="CreditsPanel/CreditsList" unique_id=478246028]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "            Alab-ab, Charlize"
+
+[node name="Course" type="Label" parent="CreditsPanel/CreditsList" unique_id=1377249225]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "       BS Computer Science"
+
+[node name="University" type="Label" parent="CreditsPanel/CreditsList" unique_id=132949278]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "University of the East - Manila"
+
+[node name="BackButton" type="Button" parent="CreditsPanel" unique_id=1178082845]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -106.0
+offset_right = 124.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 34
+text = "Back"
+
+[node name="CreditsMusic" type="AudioStreamPlayer2D" parent="." unique_id=228909024]
+
+[node name="CreditsAnimation" type="AnimationPlayer" parent="." unique_id=711073500]
+
+[connection signal="pressed" from="CreditsPanel/BackButton" to="." method="_on_back_button_pressed"]

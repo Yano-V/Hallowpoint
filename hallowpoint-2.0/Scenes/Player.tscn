@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bqqabfhlctonm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
+size = Vector2(42.5, 85.5)
+
+[node name="Player" type="CharacterBody2D" unique_id=929165942]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=58967740]
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20225961]
+position = Vector2(-3.75, -3.25)
+shape = SubResource("RectangleShape2D_qbkls")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1217655467]
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720

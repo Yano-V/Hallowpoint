@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cexeuijpf7wvp"]
+
+[ext_resource type="Texture2D" uid="uid://b06um3r2t407o" path="res://Assets/Images/GameBackground.jpg" id="1_h1o8t"]
+[ext_resource type="Script" uid="uid://uxrism1k25eq" path="res://Scripts/TUTORIAL.gd" id="1_qm0ip"]
+[ext_resource type="Texture2D" uid="uid://dfv2k26dtgkht" path="res://Assets/Images/TutorialBG.png" id="2_lgn3j"]
+[ext_resource type="Texture2D" uid="uid://dd8mdp2dwbit" path="res://Assets/Images/ICONS/BACK Button2.png" id="3_iosw0"]
+[ext_resource type="Texture2D" uid="uid://mddjb8xg4tba" path="res://Assets/Images/WASDcontrols.png" id="4_f87s1"]
+[ext_resource type="Texture2D" uid="uid://bvnm1c1n7kky5" path="res://Assets/Images/MAINMENUbtn-2.png" id="6_a3dba"]
+
+[node name="TUTORIAL" type="Control" unique_id=294520334]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qm0ip")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1383170072]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_h1o8t")
+expand_mode = 1
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=220298006]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TutorialBG" type="TextureRect" parent="." unique_id=780513897]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 112.0
+offset_right = 1088.0
+offset_bottom = 616.0
+texture = ExtResource("2_lgn3j")
+expand_mode = 1
+
+[node name="WASD" type="TextureRect" parent="TutorialBG" unique_id=1926402727]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 144.0
+offset_right = 392.0
+offset_bottom = 304.0
+texture = ExtResource("4_f87s1")
+expand_mode = 1
+
+[node name="BackBtn" type="TextureButton" parent="." unique_id=1552763795]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 122.0
+offset_bottom = 112.0
+texture_normal = ExtResource("3_iosw0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainMenuBtn" type="TextureButton" parent="." unique_id=1509578813]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 496.0
+offset_right = 752.0
+offset_bottom = 560.0
+texture_normal = ExtResource("6_a3dba")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]
