@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://desl42mh31a0f"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_82wrg"]
+[ext_resource type="Texture2D" uid="uid://elbs5l50h5it" path="res://Assets/Images/MAP/LB Lobby.png" id="1_qdbbf"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="2_82wrg"]
+[ext_resource type="AudioStream" uid="uid://c2stokj7ooiq8" path="res://audio/STAGE 3 (REVISED).mp3" id="2_x6ae4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6ae4"]
+size = Vector2(189.5, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x6ae4"]
+a = Vector2(1023, 90)
+b = Vector2(-48, 89)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2iq8s"]
+a = Vector2(83, 537)
+b = Vector2(87, -68)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mshqo"]
+a = Vector2(670, 424)
+b = Vector2(672, -187)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_41x1v"]
+a = Vector2(1183, 675)
+b = Vector2(107, 674)
+
+[node name="Map6" type="Node2D" unique_id=450054]
+script = ExtResource("1_82wrg")
+map_bgm = ExtResource("2_x6ae4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1452602657]
+position = Vector2(753, 499)
+scale = Vector2(1.1194218, 0.86666775)
+texture = ExtResource("1_qdbbf")
+
+[node name="Ground" type="ColorRect" parent="." unique_id=89778371]
+visible = false
+offset_right = 640.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.78431374)
+metadata/_edit_lock_ = true
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1083905366 groups=["Player"]]
+position = Vector2(1152, 344)
+
+[node name="ToSpawn" type="Area2D" parent="." unique_id=408602757]
+position = Vector2(1261.0001, 301.00003)
+scale = Vector2(0.2669104, 2.9862585)
+script = ExtResource("2_82wrg")
+target_scene = "uid://b657u28buumte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSpawn" unique_id=1185389088]
+position = Vector2(7.492842, 1.0045891)
+shape = SubResource("RectangleShape2D_x6ae4")
+
+[node name="ToSFC2" type="Area2D" parent="." unique_id=618526185]
+position = Vector2(127, 714)
+scale = Vector2(0.9069098, 0.8662584)
+script = ExtResource("2_82wrg")
+target_scene = "uid://d252to2dc705b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSFC2" unique_id=23061789]
+position = Vector2(7.492842, 1.0045891)
+shape = SubResource("RectangleShape2D_x6ae4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1708097669]
+position = Vector2(-100, -32)
+scale = Vector2(1.1718699, 1.1525562)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1125975167]
+position = Vector2(157, -29)
+shape = SubResource("SegmentShape2D_x6ae4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1111286276]
+position = Vector2(19, 126)
+shape = SubResource("SegmentShape2D_2iq8s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=700825143]
+position = Vector2(510, 246)
+shape = SubResource("SegmentShape2D_mshqo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2018420464]
+position = Vector2(-4, -8)
+shape = SubResource("SegmentShape2D_41x1v")
+
+[connection signal="body_entered" from="ToSpawn" to="ToSpawn" method="_on_body_entered"]
+[connection signal="body_entered" from="ToSFC2" to="ToSFC2" method="_on_body_entered"]

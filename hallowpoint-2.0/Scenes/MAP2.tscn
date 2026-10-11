@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ceinri84tflvy"]
+
+[ext_resource type="Texture2D" uid="uid://bgiuxa6al2m20" path="res://Assets/Images/Placeholders/SFC-LOBBY.jpg" id="1_s4wed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt2uc"]
+size = Vector2(745.5, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ms5d"]
+size = Vector2(164, 80.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucvis"]
+size = Vector2(561, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7umdb"]
+size = Vector2(50.5, 352.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n3r4"]
+size = Vector2(129.5, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4wed"]
+size = Vector2(166, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vh8h"]
+size = Vector2(272.5, 182.5)
+
+[node name="Map2" type="Node2D" unique_id=1848405952]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=469955227]
+position = Vector2(641, 361)
+texture = ExtResource("1_s4wed")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1269652340]
+
+[node name="Wall1" type="StaticBody2D" parent="." unique_id=326482072]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1" unique_id=1857656114]
+position = Vector2(362, 135)
+shape = SubResource("RectangleShape2D_lt2uc")
+metadata/_edit_lock_ = true
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1196903614]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=1918802374]
+position = Vector2(197, 781)
+shape = SubResource("RectangleShape2D_7ms5d")
+metadata/_edit_lock_ = true
+
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=2028376800]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=1950523444]
+position = Vector2(547.5, 691)
+shape = SubResource("RectangleShape2D_ucvis")
+metadata/_edit_lock_ = true
+
+[node name="Wall4" type="StaticBody2D" parent="." unique_id=234693070]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=1200005711]
+position = Vector2(-27.75, 465.75)
+shape = SubResource("RectangleShape2D_7umdb")
+metadata/_edit_lock_ = true
+
+[node name="Wall5" type="StaticBody2D" parent="." unique_id=1291641135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5" unique_id=633839444]
+position = Vector2(56.25, 688.5)
+shape = SubResource("RectangleShape2D_0n3r4")
+metadata/_edit_lock_ = true
+
+[node name="Wall6" type="StaticBody2D" parent="." unique_id=866121733]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6" unique_id=1074875627]
+position = Vector2(1217, 287.5)
+shape = SubResource("RectangleShape2D_s4wed")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1703997352]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1468550747]
+position = Vector2(1160.25, 645.25)
+shape = SubResource("RectangleShape2D_3vh8h")
+metadata/_edit_lock_ = true

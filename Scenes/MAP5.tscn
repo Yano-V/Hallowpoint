@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://d0gvsvxo0q5t3"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_b5dcd"]
+[ext_resource type="Texture2D" uid="uid://cetrf2ysbjt56" path="res://Assets/Images/MAP/Quad.png" id="1_n3cep"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="2_b5dcd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os4ii"]
+size = Vector2(189.5, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b5dcd"]
+a = Vector2(1023, 90)
+b = Vector2(-48, 89)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_os4ii"]
+a = Vector2(83, 537)
+b = Vector2(87, -68)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8soef"]
+a = Vector2(670, 424)
+b = Vector2(672, -187)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ec3qe"]
+a = Vector2(1183, 675)
+b = Vector2(107, 674)
+
+[node name="Maps5" type="Node2D" unique_id=1552161402]
+script = ExtResource("1_b5dcd")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=873382325]
+position = Vector2(656, 394)
+scale = Vector2(1.1705122, 0.9062224)
+texture = ExtResource("1_n3cep")
+flip_h = true
+
+[node name="Ground" type="ColorRect" parent="." unique_id=1420966054]
+visible = false
+offset_right = 640.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.78431374)
+metadata/_edit_lock_ = true
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=314504437 groups=["Player"]]
+position = Vector2(653, 640)
+
+[node name="ToSFC" type="Area2D" parent="." unique_id=1269939150]
+position = Vector2(652.00006, 721)
+scale = Vector2(1.6424165, 0.49495116)
+script = ExtResource("2_b5dcd")
+target_scene = "uid://d252to2dc705b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSFC" unique_id=803143135]
+position = Vector2(0.60883594, -6.061247)
+shape = SubResource("RectangleShape2D_os4ii")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=391201169]
+position = Vector2(-100, -64)
+scale = Vector2(1.1737007, 1.181653)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1259507766]
+position = Vector2(157, -29)
+shape = SubResource("SegmentShape2D_b5dcd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=708723617]
+position = Vector2(19, 126)
+shape = SubResource("SegmentShape2D_os4ii")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1101704000]
+position = Vector2(510, 246)
+shape = SubResource("SegmentShape2D_8soef")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2085521357]
+position = Vector2(-4, -8)
+shape = SubResource("SegmentShape2D_ec3qe")
+
+[connection signal="body_entered" from="ToSFC" to="ToSFC" method="_on_body_entered"]

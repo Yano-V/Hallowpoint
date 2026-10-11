@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://d252to2dc705b"]
+
+[ext_resource type="Script" uid="uid://5kxarwu68v2a" path="res://Scripts/MAPS.gd" id="1_vfvji"]
+[ext_resource type="AudioStream" uid="uid://d0iik5k368wy0" path="res://audio/✅STAGE 2.ogg" id="2_tal1i"]
+[ext_resource type="Texture2D" uid="uid://ds86xvejesb27" path="res://Assets/Images/MAP/SFC Lobby.png" id="2_vfvji"]
+[ext_resource type="Script" uid="uid://b18xwop50p7mm" path="res://Scripts/DoorTransition.gd" id="3_vfvji"]
+[ext_resource type="Texture2D" uid="uid://chgyvghbq822r" path="res://Assets/Images/Puzzle Items/book receipt.png" id="5_60ddr"]
+[ext_resource type="Script" uid="uid://gu4q6vatijo3" path="res://Scenes/tableclue.gd" id="6_d6ti8"]
+[ext_resource type="FontFile" uid="uid://vt7dva3ax3ie" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="7_dpvos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tal1i"]
+size = Vector2(189.5, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tal1i"]
+a = Vector2(1023, 90)
+b = Vector2(-48, 89)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_60ddr"]
+a = Vector2(83, 537)
+b = Vector2(87, -68)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d6ti8"]
+a = Vector2(670, 424)
+b = Vector2(672, -187)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dpvos"]
+a = Vector2(1183, 675)
+b = Vector2(107, 674)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j36uh"]
+font = ExtResource("7_dpvos")
+font_size = 14
+font_color = Color(0.93333334, 0.93333334, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpvos"]
+size = Vector2(129, 35)
+
+[node name="Map3" type="Node2D" unique_id=570549972]
+script = ExtResource("1_vfvji")
+map_bgm = ExtResource("2_tal1i")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=73820049]
+position = Vector2(652, 362)
+scale = Vector2(1.1705122, 0.9062224)
+texture = ExtResource("2_vfvji")
+
+[node name="Ground" type="ColorRect" parent="." unique_id=105232201]
+visible = false
+offset_right = 640.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.78431374)
+metadata/_edit_lock_ = true
+
+[node name="To2nd" type="Area2D" parent="." unique_id=935119564]
+position = Vector2(1023, 143)
+script = ExtResource("3_vfvji")
+target_scene = "uid://cngi3l0cwhjey"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To2nd" unique_id=466444197]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_tal1i")
+
+[node name="ToQUAD" type="Area2D" parent="." unique_id=1619749602]
+position = Vector2(660, 63)
+scale = Vector2(1.4463539, 1)
+script = ExtResource("3_vfvji")
+target_scene = "uid://d0gvsvxo0q5t3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToQUAD" unique_id=1861035016]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_tal1i")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1534432258]
+position = Vector2(1132, 440)
+
+[node name="ToSPAWN" type="Area2D" parent="." unique_id=1797429464]
+position = Vector2(1268, 498.00003)
+scale = Vector2(0.2669104, 2.9862585)
+script = ExtResource("3_vfvji")
+target_scene = "uid://b657u28buumte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToSPAWN" unique_id=1172021344]
+position = Vector2(2.5, -24.5)
+shape = SubResource("RectangleShape2D_tal1i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1402494814]
+position = Vector2(-253, -54)
+scale = Vector2(1.2883878, 1.1528918)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=687902697]
+position = Vector2(157, -29)
+shape = SubResource("SegmentShape2D_tal1i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1413597808]
+position = Vector2(19, 126)
+shape = SubResource("SegmentShape2D_60ddr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=407937223]
+position = Vector2(510, 246)
+shape = SubResource("SegmentShape2D_d6ti8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=88682991]
+position = Vector2(-4, -8)
+shape = SubResource("SegmentShape2D_dpvos")
+
+[node name="PuzzleUI" type="CanvasLayer" parent="." unique_id=435535114]
+
+[node name="ReceiptPopUp" type="TextureRect" parent="PuzzleUI" unique_id=2072792103]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -251.0
+offset_right = 909.0
+offset_bottom = 949.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.44734946, 0.44734946)
+texture = ExtResource("5_60ddr")
+
+[node name="TableClue" type="Area2D" parent="." unique_id=130322775 node_paths=PackedStringArray("receipt_ui")]
+position = Vector2(690, 397.00003)
+scale = Vector2(1.1895832, 2.6546888)
+script = ExtResource("6_d6ti8")
+receipt_ui = NodePath("../PuzzleUI/ReceiptPopUp")
+
+[node name="InteractLabel" type="Label" parent="TableClue" unique_id=82316012]
+visible = false
+offset_left = -100.0
+offset_top = -37.0
+offset_right = 99.0
+offset_bottom = -14.0
+text = "Press Space to Interact."
+label_settings = SubResource("LabelSettings_j36uh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TableClue" unique_id=2036863447]
+position = Vector2(45, -1)
+shape = SubResource("RectangleShape2D_dpvos")
+
+[connection signal="body_entered" from="To2nd" to="To2nd" method="_on_body_entered"]
+[connection signal="body_entered" from="ToQUAD" to="ToQUAD" method="_on_body_entered"]
+[connection signal="body_entered" from="ToSPAWN" to="ToSPAWN" method="_on_body_entered"]
+[connection signal="body_entered" from="TableClue" to="TableClue" method="_on_body_entered"]
+[connection signal="body_exited" from="TableClue" to="TableClue" method="_on_body_exited"]
