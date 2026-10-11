@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bopbs38vmf11m"]
 
 [ext_resource type="Texture2D" uid="uid://vlgpqtwoaog" path="res://Assets/Images/UEsampleAIsettingsbg2.png" id="1_4hxq3"]
-[ext_resource type="Script" uid="uid://cjaigbw5ekkhq" path="res://Scripts/SETTINGS.gd" id="1_flfri"]
-[ext_resource type="AudioStream" uid="uid://bpbnhquh2wg7b" path="res://audio/STARTUP (REVISED).mp3" id="2_08swt"]
+[ext_resource type="Script" uid="uid://cjaigbw5ekkhq" path="res://Scripts/Settings.gd" id="1_flfri"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flfri"]
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.6666667)
@@ -42,7 +41,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_flfri")
-map_bgm = ExtResource("2_08swt")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2117823833]
 layout_mode = 0
