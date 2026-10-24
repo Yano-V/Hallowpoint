@@ -10,8 +10,6 @@
 [node name="Game" type="Node2D" unique_id=1994847023]
 script = ExtResource("1_b2bpf")
 
-[node name="TYK" parent="." unique_id=1204754827 instance=ExtResource("3_fgofq")]
-
 [node name="Player" parent="." unique_id=929165942 instance=ExtResource("1_gl6un")]
 z_index = 1
 position = Vector2(867, 384)
@@ -19,6 +17,10 @@ script = ExtResource("2_j5yw3")
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1562816122]
 limit_enabled = false
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=1764811675]
+
+[node name="TYK" parent="MapContainer" unique_id=1204754827 instance=ExtResource("3_fgofq")]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=471475512]
 

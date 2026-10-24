@@ -133,6 +133,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.39215687)
 
 [node name="AmbientAudio" type="AudioStreamPlayer2D" parent="." unique_id=1586655404]
+visible = false
 stream = ExtResource("3_8um5k")
 autoplay = true
 

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://bq0kn57r8t6gq"
 GameState="*uid://5opvn05w7ctm"
+MusicPlayer="*uid://cio3gqf1vi7ba"
 
 [display]
 

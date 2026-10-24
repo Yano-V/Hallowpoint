@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bf11joh07bd21"]
 
+[ext_resource type="Script" uid="uid://gjwmue8yploc" path="res://Scripts/TYK.gd" id="1_48nym"]
 [ext_resource type="Texture2D" uid="uid://bv87u5u4t16xo" path="res://Assets/Images/MAP/TYK Garden.jpg" id="1_v0sw2"]
 [ext_resource type="Texture2D" uid="uid://cmvrabsxxfqv1" path="res://Assets/Images/MAP/TREEFG.png" id="2_vtaee"]
 [ext_resource type="Texture2D" uid="uid://na7t0p82pols" path="res://Assets/Images/MAP/BUSHFG.png" id="3_cpucp"]
 [ext_resource type="Texture2D" uid="uid://dqt7tunvbxacp" path="res://Assets/Images/MAP/TYKGatesFG.png" id="4_gr602"]
+[ext_resource type="Script" uid="uid://b278r2bsxd14c" path="res://Scenes/MapExit.gd" id="5_gr602"]
+[ext_resource type="Script" uid="uid://1gmv5o5sxcxv" path="res://Scenes/grass_zones.gd" id="6_dcije"]
+[ext_resource type="Script" uid="uid://b0d2p5cg23nkg" path="res://Scenes/concrete_zones.gd" id="7_37otf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpucp"]
 size = Vector2(103.950066, 79.42063)
@@ -36,7 +40,7 @@ size = Vector2(127, 6)
 size = Vector2(248, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24yy0"]
-size = Vector2(68, 3)
+size = Vector2(41, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1up"]
 size = Vector2(51, 3)
@@ -50,7 +54,71 @@ radius = 34.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_hbsid"]
 radius = 36.221542
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpucp"]
+radius = 46.173584
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt35b"]
+size = Vector2(85, 44.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsid"]
+size = Vector2(348.5, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbrbq"]
+size = Vector2(389, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmvil"]
+size = Vector2(122, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcag"]
+size = Vector2(164.0625, 299.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orh7s"]
+size = Vector2(69, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oa7t8"]
+size = Vector2(581, 719)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iugx8"]
+size = Vector2(230, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ryuj"]
+size = Vector2(120, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsbpv"]
+size = Vector2(57, 92.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8rxs"]
+size = Vector2(75, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eruo6"]
+size = Vector2(166, 93.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7piv"]
+size = Vector2(59.5, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss43b"]
+size = Vector2(108, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yex1k"]
+size = Vector2(81.5, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq8dq"]
+size = Vector2(97.5, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnvto"]
+size = Vector2(88.5, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ooyt"]
+size = Vector2(99.5, 79.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nihdg"]
+size = Vector2(300, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4q8av"]
+size = Vector2(202, 31)
+
 [node name="TYK" type="Node2D" unique_id=1204754827]
+script = ExtResource("1_48nym")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=661189931]
 position = Vector2(641.00006, 358)
@@ -59,6 +127,7 @@ position = Vector2(641.00006, 358)
 position = Vector2(0.49896264, 0.49999094)
 scale = Vector2(0.9094027, 0.9078282)
 texture = ExtResource("1_v0sw2")
+metadata/_edit_lock_ = true
 
 [node name="Walls" type="Sprite2D" parent="." unique_id=1590969605]
 
@@ -83,7 +152,7 @@ shape = SubResource("RectangleShape2D_gr602")
 [node name="CornerWall" type="StaticBody2D" parent="Walls" unique_id=1159877622]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/CornerWall" unique_id=1821619257]
-position = Vector2(20, 19.25)
+position = Vector2(111, 46)
 shape = SubResource("RectangleShape2D_dcije")
 
 [node name="BldgWall" type="StaticBody2D" parent="Walls" unique_id=2080172704]
@@ -131,7 +200,7 @@ shape = SubResource("RectangleShape2D_se2ea")
 [node name="BushWall4" type="StaticBody2D" parent="Walls" unique_id=1431867787]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BushWall4" unique_id=276549717]
-position = Vector2(821, 524.5)
+position = Vector2(816.5, 523)
 shape = SubResource("RectangleShape2D_24yy0")
 
 [node name="BushWall5" type="StaticBody2D" parent="Walls" unique_id=1611029370]
@@ -158,19 +227,215 @@ shape = SubResource("CircleShape2D_rt35b")
 position = Vector2(690, 238)
 shape = SubResource("CircleShape2D_hbsid")
 
+[node name="Holes" type="StaticBody2D" parent="Walls" unique_id=1053137166]
+position = Vector2(313, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Holes" unique_id=388751113]
+position = Vector2(-116, 174)
+shape = SubResource("CircleShape2D_cpucp")
+
+[node name="Hole2" type="StaticBody2D" parent="Walls/Holes" unique_id=657390260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Holes/Hole2" unique_id=1002818407]
+position = Vector2(486, 14)
+shape = SubResource("CircleShape2D_cpucp")
+
+[node name="Hole3" type="StaticBody2D" parent="Walls/Holes" unique_id=1337983881]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Holes/Hole3" unique_id=348112861]
+position = Vector2(546, -3)
+shape = SubResource("CircleShape2D_cpucp")
+
+[node name="Hole4" type="StaticBody2D" parent="Walls/Holes" unique_id=598534242]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Holes/Hole4" unique_id=1087660664]
+position = Vector2(-167, 224)
+shape = SubResource("CircleShape2D_cpucp")
+
 [node name="Foreground" type="Sprite2D" parent="." unique_id=187447027]
 z_index = 2
 position = Vector2(641, 358)
 scale = Vector2(0.908, 0.908)
+metadata/_edit_lock_ = true
 
 [node name="TreeFG" type="Sprite2D" parent="Foreground" unique_id=140564232]
 z_index = 2
 texture = ExtResource("2_vtaee")
+metadata/_edit_lock_ = true
 
 [node name="BushFG" type="Sprite2D" parent="Foreground" unique_id=1897042331]
 z_index = 2
 texture = ExtResource("3_cpucp")
+metadata/_edit_lock_ = true
 
 [node name="TYKGatesFG" type="Sprite2D" parent="Foreground" unique_id=2062279913]
 z_index = 2
 texture = ExtResource("4_gr602")
+metadata/_edit_lock_ = true
+
+[node name="MapExit" type="Area2D" parent="." unique_id=753640562]
+script = ExtResource("5_gr602")
+next_map = "uid://bgx8qpushh2ct"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=561683331]
+position = Vector2(294.5, 16.625)
+shape = SubResource("RectangleShape2D_rt35b")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=63763979]
+position = Vector2(405, 25)
+
+[node name="GrassZone" type="Area2D" parent="." unique_id=883596486]
+script = ExtResource("6_dcije")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone" unique_id=256583300]
+position = Vector2(522.75, 111.5)
+shape = SubResource("RectangleShape2D_hbsid")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone2" type="Area2D" parent="GrassZone" unique_id=1047216856]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone2" unique_id=262687718]
+position = Vector2(277.5, 433)
+shape = SubResource("RectangleShape2D_dbrbq")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone3" type="Area2D" parent="GrassZone" unique_id=87831957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone3" unique_id=929865994]
+position = Vector2(139, 624)
+shape = SubResource("RectangleShape2D_pmvil")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone4" type="Area2D" parent="GrassZone" unique_id=1549875802]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone4" unique_id=2920517]
+position = Vector2(164.03125, 198)
+shape = SubResource("RectangleShape2D_rrcag")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone5" type="Area2D" parent="GrassZone" unique_id=449768098]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone5" unique_id=1494166663]
+position = Vector2(146, 29)
+shape = SubResource("RectangleShape2D_orh7s")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone6" type="Area2D" parent="GrassZone" unique_id=1529867976]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone6" unique_id=600677649]
+position = Vector2(991.5, 360.5)
+shape = SubResource("RectangleShape2D_oa7t8")
+debug_color = Color(0.4001824, 0.6041087, 0.20288026, 0.41960785)
+
+[node name="GrassZone7" type="Area2D" parent="GrassZone" unique_id=1572093436]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone7" unique_id=160288787]
+position = Vector2(588, 690)
+shape = SubResource("RectangleShape2D_iugx8")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone8" type="Area2D" parent="GrassZone" unique_id=1357690372]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone8" unique_id=1709621975]
+position = Vector2(642, 642)
+shape = SubResource("RectangleShape2D_6ryuj")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="GrassZone9" type="Area2D" parent="GrassZone" unique_id=1052281937]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZone/GrassZone9" unique_id=203109734]
+position = Vector2(674.5, 576.25)
+shape = SubResource("RectangleShape2D_jsbpv")
+debug_color = Color(0.42745098, 0.59607846, 0.2, 0.41960785)
+
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=148265347]
+script = ExtResource("7_37otf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=1296684283]
+position = Vector2(296.5, 125)
+shape = SubResource("RectangleShape2D_p8rxs")
+debug_color = Color(0.8224464, 0.25177714, 0.7771907, 0.41960785)
+
+[node name="ConcreteZone2" type="Area2D" parent="ConcreteZone" unique_id=1483030389]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone2" unique_id=442343043]
+position = Vector2(362, 635.75)
+shape = SubResource("RectangleShape2D_eruo6")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone3" type="Area2D" parent="ConcreteZone" unique_id=1759178316]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone3" unique_id=196718526]
+position = Vector2(245.25, 675)
+shape = SubResource("RectangleShape2D_i7piv")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone4" type="Area2D" parent="ConcreteZone" unique_id=1196323892]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone4" unique_id=451411649]
+position = Vector2(503, 608)
+shape = SubResource("RectangleShape2D_ss43b")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone5" type="Area2D" parent="ConcreteZone" unique_id=2060229478]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone5" unique_id=691603578]
+position = Vector2(598.25, 564)
+shape = SubResource("RectangleShape2D_yex1k")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone6" type="Area2D" parent="ConcreteZone" unique_id=1013365696]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone6" unique_id=1552159757]
+position = Vector2(634.25, 476)
+shape = SubResource("RectangleShape2D_nq8dq")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone7" type="Area2D" parent="ConcreteZone" unique_id=1358405503]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone7" unique_id=285484201]
+position = Vector2(644, 401)
+shape = SubResource("RectangleShape2D_nq8dq")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone8" type="Area2D" parent="ConcreteZone" unique_id=1117964765]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone8" unique_id=1771200438]
+position = Vector2(639, 327)
+shape = SubResource("RectangleShape2D_nq8dq")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone9" type="Area2D" parent="ConcreteZone" unique_id=967308748]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone9" unique_id=1521514778]
+position = Vector2(588, 271)
+shape = SubResource("RectangleShape2D_lnvto")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone10" type="Area2D" parent="ConcreteZone" unique_id=459105851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone10" unique_id=1651998387]
+position = Vector2(384, 223)
+shape = SubResource("RectangleShape2D_0ooyt")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone11" type="Area2D" parent="ConcreteZone" unique_id=2087033840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone11" unique_id=4426195]
+position = Vector2(488, 245)
+shape = SubResource("RectangleShape2D_0ooyt")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="ConcreteZone12" type="Area2D" parent="ConcreteZone" unique_id=773517325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/ConcreteZone12" unique_id=796482451]
+position = Vector2(342, 29)
+shape = SubResource("RectangleShape2D_nihdg")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="ConcreteZone" unique_id=2093070343]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone/Area2D" unique_id=262639779]
+position = Vector2(596, 15.5)
+shape = SubResource("RectangleShape2D_4q8av")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)

@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://71sul6ypg8k1" path="res://Scripts/Buttons/Menu2/mainmenu2Btn.gd" id="8_vsqpi"]
 [ext_resource type="Texture2D" uid="uid://k3j0ubw6jqj2" path="res://Assets/Images/NObtn.png" id="9_1582f"]
 [ext_resource type="Script" uid="uid://bojf5gqlnm7lp" path="res://Scripts/Buttons/Menu2/quit2Btn.gd" id="10_023g3"]
+[ext_resource type="Script" uid="uid://gajrgek81iin" path="res://Scenes/yesbtn2.gd" id="13_vsqpi"]
+[ext_resource type="Script" uid="uid://c8ibqoeovo7wu" path="res://Scenes/nobtn2.gd" id="15_esjgu"]
 
 [node name="MENU2" type="Control" unique_id=873905108]
 layout_mode = 3
@@ -109,6 +111,7 @@ offset_bottom = 220.0
 texture_normal = ExtResource("8_fqqvg")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("13_vsqpi")
 
 [node name="Nobtn" type="TextureButton" parent="QuitConfirmation" unique_id=405167759]
 layout_mode = 0
@@ -119,6 +122,7 @@ offset_bottom = 220.0
 texture_normal = ExtResource("9_1582f")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("15_esjgu")
 
 [connection signal="pressed" from="Panel/RESUMEbtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="Panel/SAVEbtn" to="." method="_on_save_btn_pressed"]

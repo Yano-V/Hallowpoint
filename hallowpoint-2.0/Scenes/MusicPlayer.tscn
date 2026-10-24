@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cio3gqf1vi7ba"]
+
+[ext_resource type="AudioStream" uid="uid://su5lcamkxr2f" path="res://Assets/Audio/STARTUP (REVISED).ogg" id="1_5psdy"]
+[ext_resource type="Script" uid="uid://dm3h1ft0b657r" path="res://Scenes/MusicPlayer.gd" id="2_w8kvg"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=8590289]
+stream = ExtResource("1_5psdy")
+autoplay = true
+parameters/looping = true
+script = ExtResource("2_w8kvg")

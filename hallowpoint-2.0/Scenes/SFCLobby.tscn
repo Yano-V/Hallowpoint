@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bntvjlm3a4r1r"]
+
+[ext_resource type="Texture2D" uid="uid://dqbcu5xwl43bq" path="res://Assets/Images/MAP/SFC Lobby.jpg" id="1_owrtc"]
+
+[node name="SFC Lobby" type="Node2D" unique_id=895620955]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=702397529]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=1073546154]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_owrtc")
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=417601591]
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=574180992]
+position = Vector2(641, 358)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=455868202]
+position = Vector2(1161, 121)

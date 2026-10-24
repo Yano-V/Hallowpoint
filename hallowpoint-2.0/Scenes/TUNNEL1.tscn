@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://brtxc0l6txwnw"]
+
+[ext_resource type="Texture2D" uid="uid://dmreub8sm5w1t" path="res://Assets/Images/MAP/TUNNEL1.jpg" id="1_sfukt"]
+[ext_resource type="Script" uid="uid://bc46fcgrmb82i" path="res://Scripts/TUNNEL1/LeftMapExit.gd" id="2_eocr2"]
+[ext_resource type="Script" uid="uid://ouxt5e1a44om" path="res://Scripts/TUNNEL1/RightMapExit.gd" id="3_npxgb"]
+[ext_resource type="Script" uid="uid://e7hqhul23j31" path="res://Scripts/TUNNEL1/concrete_zone.gd" id="4_tb633"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfukt"]
+size = Vector2(1158.5, 202)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eocr2"]
+size = Vector2(1156.5, 239.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npxgb"]
+size = Vector2(9, 282.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb633"]
+size = Vector2(107, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg5rp"]
+size = Vector2(113.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkug8"]
+size = Vector2(64, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djsdf"]
+size = Vector2(37.5, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55av3"]
+size = Vector2(1190.5, 206)
+
+[node name="Tunnel1" type="Node2D" unique_id=187900921]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=924735248]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=1299798964]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_sfukt")
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=1349135983]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1961148540]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=1434213169]
+position = Vector2(697.75, 105)
+shape = SubResource("RectangleShape2D_sfukt")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=1445599644]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=1259309601]
+position = Vector2(698.75, 594.25)
+shape = SubResource("RectangleShape2D_eocr2")
+
+[node name="RightOutsideWall" type="StaticBody2D" parent="Walls" unique_id=738950173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightOutsideWall" unique_id=1707894964]
+position = Vector2(1287.5, 334.75)
+shape = SubResource("RectangleShape2D_npxgb")
+
+[node name="InvisibleWall" type="StaticBody2D" parent="Walls" unique_id=1473319809]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall" unique_id=376666550]
+position = Vector2(58.5, 219)
+shape = SubResource("RectangleShape2D_tb633")
+
+[node name="InvisibleWall2" type="StaticBody2D" parent="Walls" unique_id=495062953]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall2" unique_id=1096687703]
+position = Vector2(57, 501)
+shape = SubResource("RectangleShape2D_pg5rp")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=519660504]
+
+[node name="LeftMapExit" type="Area2D" parent="." unique_id=28025627]
+script = ExtResource("2_eocr2")
+target_scene = "uid://bntvjlm3a4r1r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftMapExit" unique_id=77748354]
+position = Vector2(70, 368)
+shape = SubResource("RectangleShape2D_kkug8")
+debug_color = Color(0.85379237, 0.36937767, 0.020737423, 0.41960785)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=414187680]
+position = Vector2(1152, 370)
+
+[node name="RightMapExit" type="Area2D" parent="." unique_id=1144479484]
+script = ExtResource("3_npxgb")
+target_scene = "uid://bgx8qpushh2ct"
+destination_spawn = "PlayerSpawn2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightMapExit" unique_id=981369153]
+position = Vector2(1253.75, 367.5)
+shape = SubResource("RectangleShape2D_djsdf")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=131522162]
+position = Vector2(193, 368)
+
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=1556998273]
+script = ExtResource("4_tb633")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=1157179127]
+position = Vector2(681.75, 367)
+shape = SubResource("RectangleShape2D_55av3")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
