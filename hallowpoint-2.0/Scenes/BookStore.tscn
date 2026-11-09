@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlfpa24hp2yrd"]
 
 [ext_resource type="Texture2D" uid="uid://dimfmbejvabx3" path="res://Assets/Images/MAP/SFC Bookstore.jpg" id="1_rccw2"]
+[ext_resource type="Script" uid="uid://1nmcq3lgs1n8" path="res://Scripts/SFC2ndFLR/BookStore.gd" id="2_fru7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fru7l"]
 size = Vector2(15, 734)
@@ -13,6 +14,18 @@ size = Vector2(990, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_negqd"]
 size = Vector2(25, 726.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rccw2"]
+size = Vector2(695, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joeay"]
+size = Vector2(56.5, 307)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwajm"]
+size = Vector2(50, 349.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr5xh"]
+size = Vector2(165, 20)
 
 [node name="BookStore" type="Node2D" unique_id=862903787]
 
@@ -45,10 +58,41 @@ shape = SubResource("RectangleShape2D_d0k1y")
 position = Vector2(794, 724.25)
 shape = SubResource("RectangleShape2D_h8fj5")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=722002615]
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=722002615]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=116063203]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=116063203]
 position = Vector2(1290.5, 364.75)
 shape = SubResource("RectangleShape2D_negqd")
 
+[node name="BigWall" type="StaticBody2D" parent="Walls" unique_id=1421485719]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BigWall" unique_id=1967346403]
+position = Vector2(927.5, 106)
+shape = SubResource("RectangleShape2D_rccw2")
+
+[node name="ChairWall" type="StaticBody2D" parent="Walls" unique_id=333181456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/ChairWall" unique_id=1757060653]
+position = Vector2(365.75, 447.5)
+shape = SubResource("RectangleShape2D_joeay")
+
+[node name="MiddleWall" type="StaticBody2D" parent="Walls" unique_id=1518869233]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/MiddleWall" unique_id=289307145]
+position = Vector2(880, 540.25)
+shape = SubResource("RectangleShape2D_dwajm")
+
 [node name="Foreground" type="Sprite2D" parent="." unique_id=1286812919]
+
+[node name="MapExit" type="Area2D" parent="." unique_id=959729403 groups=["map_exits"]]
+script = ExtResource("2_fru7l")
+target_scene = "uid://3by1t3xcrc8"
+destination_spawn = "PlayerSpawn2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=519701650]
+position = Vector2(439, 4)
+shape = SubResource("RectangleShape2D_mr5xh")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=248806616]
+position = Vector2(443, 53)

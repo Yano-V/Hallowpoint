@@ -187,5 +187,8 @@ position = Vector2(8, 503)
 shape = SubResource("RectangleShape2D_60cwd")
 debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
 
+[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=1648018117]
+position = Vector2(64, 512)
+
 [editable path="Interactable"]
 [editable path="StatueInteraction"]

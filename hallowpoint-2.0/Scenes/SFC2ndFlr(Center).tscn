@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://3by1t3xcrc8"]
 
 [ext_resource type="Texture2D" uid="uid://bjq8k3vh1mjmq" path="res://Assets/Images/MAP/SFC 2nd Floor (Center).jpg" id="1_la0o6"]
+[ext_resource type="Script" uid="uid://corsb4s6srylh" path="res://Scripts/SFC2ndFlr(Center)/MapExit.gd" id="2_ey1xm"]
+[ext_resource type="Script" uid="uid://hbwc65njfw4t" path="res://Scripts/SFC2ndFlr(Center)/MapExit2.gd" id="3_8xb1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey1xm"]
 size = Vector2(28, 726)
@@ -19,6 +21,12 @@ size = Vector2(1294, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdlfh"]
 size = Vector2(233, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8jle"]
+size = Vector2(54.5, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chgj7"]
+size = Vector2(134, 22)
 
 [node name="SFC2ndFlr(Center)" type="Node2D" unique_id=1769941390]
 
@@ -73,3 +81,25 @@ shape = SubResource("RectangleShape2D_tdlfh")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1578719749]
 position = Vector2(1176, 77)
+
+[node name="MapExit" type="Area2D" parent="." unique_id=1155139451 groups=["map_exits"]]
+script = ExtResource("2_ey1xm")
+target_scene = "uid://kc0wrb6fpl5l"
+destination_spawn = "PlayerSpawn2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=2068346997]
+position = Vector2(1250.25, 24.5)
+shape = SubResource("RectangleShape2D_y8jle")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="MapExit2" type="Area2D" parent="." unique_id=422182636 groups=["map_exits"]]
+script = ExtResource("3_8xb1t")
+target_scene = "uid://dlfpa24hp2yrd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit2" unique_id=2013981945]
+position = Vector2(640, 708)
+shape = SubResource("RectangleShape2D_chgj7")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=980300791]
+position = Vector2(640, 639)
