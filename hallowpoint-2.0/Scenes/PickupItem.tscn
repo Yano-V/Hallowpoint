@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dk0wa8h1735vi"]
+
+[ext_resource type="Script" uid="uid://disa3viwfuclm" path="res://Scripts/PickupItem.gd" id="1_b1b3u"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="2_b1b3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl4vt"]
+size = Vector2(106.20815, 64.49779)
+
+[node name="PickupItem" type="Area2D" unique_id=2034020040]
+script = ExtResource("1_b1b3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=615337673]
+position = Vector2(655.8582, 351.94443)
+rotation = 1.4372702
+scale = Vector2(0.12958668, 0.08155228)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=296146495]
+position = Vector2(656.5703, 353.25787)
+rotation = -0.12755303
+scale = Vector2(0.99999934, 0.99999934)
+shape = SubResource("RectangleShape2D_xl4vt")
+
+[node name="Prompt" type="Label" parent="." unique_id=1027660579]
+visible = false
+offset_left = 568.0
+offset_top = 272.0
+offset_right = 746.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_b1b3u")
+theme_override_font_sizes/font_size = 18
+text = "Press E to interact."
+horizontal_alignment = 1
+vertical_alignment = 1

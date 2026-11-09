@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bf11joh07bd21" path="res://Scenes/TYK.tscn" id="3_fgofq"]
 [ext_resource type="Texture2D" uid="uid://dxwvyncd8c06j" path="res://Assets/Images/ICONS/PAUSEicon.png" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://bbeyef83y2xxf" path="res://Scenes/PAUSE.tscn" id="6_7lihs"]
+[ext_resource type="PackedScene" uid="uid://c177mk3sv8ota" path="res://Scenes/DialogueBox.tscn" id="7_fgofq"]
+[ext_resource type="PackedScene" uid="uid://dxuabdpoxrt2f" path="res://Scenes/TutorialIG.tscn" id="8_2irst"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="8_bf53h"]
+[ext_resource type="PackedScene" uid="uid://dwyrq5bqiqq1x" path="res://Scenes/StatueInspect.tscn" id="9_71axn"]
 
 [node name="Game" type="Node2D" unique_id=1994847023]
 script = ExtResource("1_b2bpf")
@@ -35,4 +39,35 @@ stretch_mode = 0
 
 [node name="Pause" parent="UI" unique_id=1434337191 instance=ExtResource("6_7lihs")]
 
+[node name="StatueInspect" parent="UI" unique_id=945180309 instance=ExtResource("9_71axn")]
+
+[node name="DialogueBox" parent="UI" unique_id=2106767254 groups=["dialogue_ui"] instance=ExtResource("7_fgofq")]
+visible = false
+
+[node name="InteractionPrompt" type="Label" parent="UI" unique_id=648094165 groups=["interaction_prompt"]]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -75.0
+offset_right = -30.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_bf53h")
+theme_override_font_sizes/font_size = 30
+text = "Press E to interact."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TutorialIG" parent="." unique_id=950900908 instance=ExtResource("8_2irst")]
+process_mode = 3
+
 [connection signal="pressed" from="UI/PAUSEbtn" to="." method="_on_pause_btn_pressed"]
+
+[editable path="UI/StatueInspect"]
+[editable path="UI/DialogueBox"]
+[editable path="TutorialIG"]

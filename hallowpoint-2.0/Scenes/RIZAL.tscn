@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bvoxc8jadjjku"]
+
+[ext_resource type="Texture2D" uid="uid://mdtjql681ai0" path="res://Assets/Images/MAP/Rizal Statue.jpg" id="1_swhjh"]
+
+[node name="RIZALSTATUE" type="Node2D" unique_id=960093484]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1133276905]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=1996293945]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_swhjh")
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=1332555838]
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1521361558]

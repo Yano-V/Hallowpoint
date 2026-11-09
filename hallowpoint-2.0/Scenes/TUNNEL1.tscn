@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brtxc0l6txwnw"]
 
-[ext_resource type="Texture2D" uid="uid://dmreub8sm5w1t" path="res://Assets/Images/MAP/TUNNEL1.jpg" id="1_sfukt"]
+[ext_resource type="Texture2D" uid="uid://cwwibpvtnyx6a" path="res://Assets/Images/MAP/TYK to SFC (1).jpg" id="1_tb633"]
 [ext_resource type="Script" uid="uid://bc46fcgrmb82i" path="res://Scripts/TUNNEL1/LeftMapExit.gd" id="2_eocr2"]
 [ext_resource type="Script" uid="uid://ouxt5e1a44om" path="res://Scripts/TUNNEL1/RightMapExit.gd" id="3_npxgb"]
 [ext_resource type="Script" uid="uid://e7hqhul23j31" path="res://Scripts/TUNNEL1/concrete_zone.gd" id="4_tb633"]
@@ -37,7 +37,7 @@ position = Vector2(641, 358)
 [node name="Map" type="Sprite2D" parent="Background" unique_id=1299798964]
 position = Vector2(0.499, 0.5)
 scale = Vector2(0.908, 0.908)
-texture = ExtResource("1_sfukt")
+texture = ExtResource("1_tb633")
 
 [node name="Walls" type="Sprite2D" parent="." unique_id=1349135983]
 

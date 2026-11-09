@@ -20,6 +20,9 @@ var current_surface: String = ""
 
 
 func _ready() -> void:
+	# Add Player to the player group
+	add_to_group("player")
+	
 	# Load the selected character's textures
 	if GameManager.selected_character == "boy":
 		idle_tex = preload("res://Assets/Images/CHARACTERS/BOY.png")

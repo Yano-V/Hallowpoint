@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://bgx8qpushh2ct"]
 
 [ext_resource type="Script" uid="uid://53baouer34lb" path="res://Scripts/TYK2.gd" id="1_i0wjk"]
-[ext_resource type="Texture2D" uid="uid://dvj83u0xw478p" path="res://Assets/Images/MAP/TYK Garden 2.jpg" id="1_ldt2m"]
 [ext_resource type="Texture2D" uid="uid://bdqgyslolvsxq" path="res://Assets/Images/MAP/TYK Garden 2-roofs.png" id="2_un3ag"]
-[ext_resource type="Texture2D" uid="uid://xmtkwf1pfcmi" path="res://Assets/Images/MAP/TYK Garden 2-bigtree.png" id="3_i0wjk"]
+[ext_resource type="Texture2D" uid="uid://hgr6rw6o02sa" path="res://Assets/Images/MAP/TYK Garden FINAL.jpg" id="2_wxlir"]
+[ext_resource type="Texture2D" uid="uid://derrwwlfk8q5t" path="res://Assets/Images/MAP/TYK GardenBIGTREE-FINAL.png" id="4_q1tny"]
 [ext_resource type="Script" uid="uid://cek7j6e7mrirk" path="res://Scenes/MapExitTYK2.gd" id="4_un3ag"]
 [ext_resource type="Script" uid="uid://b5os2cph2wo31" path="res://Scripts/TYK2/grass_zones.gd" id="6_6mjim"]
 [ext_resource type="Script" uid="uid://bdiwmru8iwfer" path="res://Scripts/TYK2/LeftMapExit.gd" id="6_wxlir"]
 [ext_resource type="Script" uid="uid://btegvt3dnqdhx" path="res://Scripts/TYK2/concrete_zones.gd" id="7_helj5"]
+[ext_resource type="PackedScene" uid="uid://dk0wa8h1735vi" path="res://Scenes/PickupItem.tscn" id="9_q1tny"]
+[ext_resource type="Texture2D" uid="uid://cmod841uutot2" path="res://Assets/Images/PuzzleItems/shovel.png" id="10_am8nu"]
+[ext_resource type="PackedScene" uid="uid://drsadiwrmbnqa" path="res://Scenes/Interactable.tscn" id="11_8an32"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldt2m"]
 size = Vector2(1283.5, 20)
@@ -86,7 +89,7 @@ size = Vector2(137, 17.75)
 size = Vector2(24, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8an32"]
-size = Vector2(505, 401)
+size = Vector2(505, 430)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4wj1"]
 size = Vector2(478, 46)
@@ -132,7 +135,7 @@ size = Vector2(156, 92)
 size = Vector2(158.5, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1og"]
-size = Vector2(584, 68.5)
+size = Vector2(584, 52.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evqe5"]
 size = Vector2(84, 166)
@@ -162,7 +165,7 @@ metadata/_edit_lock_ = true
 [node name="Map" type="Sprite2D" parent="Background" unique_id=827039303]
 position = Vector2(0.499, 0.5)
 scale = Vector2(0.908, 0.908)
-texture = ExtResource("1_ldt2m")
+texture = ExtResource("2_wxlir")
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="Sprite2D" parent="." unique_id=368003788]
@@ -335,7 +338,7 @@ metadata/_edit_lock_ = true
 
 [node name="BigtreeFG" type="Sprite2D" parent="Foreground" unique_id=633998386]
 z_index = 2
-texture = ExtResource("3_i0wjk")
+texture = ExtResource("4_q1tny")
 metadata/_edit_lock_ = true
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1119131623]
@@ -354,7 +357,7 @@ script = ExtResource("6_wxlir")
 target_scene = "uid://brtxc0l6txwnw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftMapExit" unique_id=1211493622]
-position = Vector2(13, 623)
+position = Vector2(17, 623)
 shape = SubResource("RectangleShape2D_6yiii")
 debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
 
@@ -362,7 +365,7 @@ debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
 script = ExtResource("6_6mjim")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZones" unique_id=1847372349]
-position = Vector2(530.5, 309.5)
+position = Vector2(530.5, 295)
 shape = SubResource("RectangleShape2D_8an32")
 debug_color = Color(0.4, 0.6039216, 0.20392157, 0.41960785)
 
@@ -482,7 +485,7 @@ debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 [node name="ConcreteZone4" type="Area2D" parent="ConcreteZones" unique_id=357700674]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZones/ConcreteZone4" unique_id=676738671]
-position = Vector2(560, 53.75)
+position = Vector2(560, 45.75)
 shape = SubResource("RectangleShape2D_5e1og")
 debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 
@@ -531,3 +534,32 @@ debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 
 [node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=1971820954]
 position = Vector2(100, 623)
+
+[node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("9_q1tny")]
+position = Vector2(464, -128)
+item_name = "Shovel"
+
+[node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
+texture = ExtResource("10_am8nu")
+
+[node name="Prompt" parent="PickupItem" index="2" unique_id=1027660579]
+offset_top = 288.0
+offset_bottom = 344.0
+
+[node name="Interactable" parent="." unique_id=720223303 instance=ExtResource("11_8an32")]
+interaction_type = 2
+required_item = "Magnifying Glass"
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=114311415]
+position = Vector2(8, 216)
+
+[node name="Interactable2" parent="." unique_id=33721783 instance=ExtResource("11_8an32")]
+interaction_type = 1
+
+[node name="CollisionShape2D" parent="Interactable2" index="0" unique_id=114311415]
+position = Vector2(208, 6.0000005)
+rotation = 1.566883
+
+[editable path="PickupItem"]
+[editable path="Interactable"]
+[editable path="Interactable2"]

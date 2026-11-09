@@ -1,6 +1,76 @@
 [gd_scene format=3 uid="uid://bntvjlm3a4r1r"]
 
 [ext_resource type="Texture2D" uid="uid://dqbcu5xwl43bq" path="res://Assets/Images/MAP/SFC Lobby.jpg" id="1_owrtc"]
+[ext_resource type="Texture2D" uid="uid://b6sxxe2vu18g" path="res://Assets/Images/MAP/PILLARSFG.png" id="2_d8si0"]
+[ext_resource type="Script" uid="uid://ceipqc47io8i7" path="res://Scripts/SFCLobby/MapExit.gd" id="2_l5t0d"]
+[ext_resource type="Script" uid="uid://de5kymli3inua" path="res://Scripts/SFCLobby/MapExit2.gd" id="3_1477u"]
+[ext_resource type="PackedScene" uid="uid://drsadiwrmbnqa" path="res://Scenes/Interactable.tscn" id="5_ple0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owrtc"]
+size = Vector2(1290, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5t0d"]
+size = Vector2(1285.5, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1477u"]
+size = Vector2(10, 740)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8si0"]
+size = Vector2(6.5, 728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb727"]
+size = Vector2(143, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnpg5"]
+size = Vector2(132, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8dn0"]
+size = Vector2(67, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b16jt"]
+size = Vector2(62, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkabi"]
+size = Vector2(54, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t0h6"]
+size = Vector2(492, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mea7w"]
+size = Vector2(15.5, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmd57"]
+size = Vector2(74, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vila3"]
+size = Vector2(101.5, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nuol"]
+size = Vector2(106, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi8k7"]
+size = Vector2(101.875, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3frb2"]
+size = Vector2(68.5, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51alm"]
+size = Vector2(37, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohqjc"]
+size = Vector2(109, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ymu8"]
+size = Vector2(104, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3um2h"]
+size = Vector2(35, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ple0o"]
+size = Vector2(25, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqqet"]
+size = Vector2(30.25, 99)
 
 [node name="SFC Lobby" type="Node2D" unique_id=895620955]
 
@@ -11,11 +81,181 @@ position = Vector2(641, 358)
 position = Vector2(0.499, 0.5)
 scale = Vector2(0.908, 0.908)
 texture = ExtResource("1_owrtc")
+metadata/_edit_lock_ = true
 
 [node name="Walls" type="Sprite2D" parent="." unique_id=417601591]
 
+[node name="OutsideWalls" type="StaticBody2D" parent="Walls" unique_id=1278293498]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls" unique_id=1265826250]
+position = Vector2(641, -12)
+shape = SubResource("RectangleShape2D_owrtc")
+
+[node name="BottomOutsideWall" type="StaticBody2D" parent="Walls/OutsideWalls" unique_id=827778803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls/BottomOutsideWall" unique_id=292371738]
+position = Vector2(642, 726)
+shape = SubResource("RectangleShape2D_l5t0d")
+
+[node name="LeftOutsideWall" type="StaticBody2D" parent="Walls/OutsideWalls" unique_id=881534807]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls/LeftOutsideWall" unique_id=1000598026]
+position = Vector2(-5, 360)
+shape = SubResource("RectangleShape2D_1477u")
+
+[node name="RightOutsideWall" type="StaticBody2D" parent="Walls/OutsideWalls" unique_id=1612596378]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls/RightOutsideWall" unique_id=774540958]
+position = Vector2(1285.75, 358)
+shape = SubResource("RectangleShape2D_d8si0")
+
+[node name="PillarWalls" type="StaticBody2D" parent="Walls" unique_id=648364719]
+
+[node name="Pillarwall-1" type="CollisionShape2D" parent="Walls/PillarWalls" unique_id=1462651410]
+position = Vector2(578.5, 430)
+shape = SubResource("RectangleShape2D_lb727")
+
+[node name="Pillarwall-2" type="StaticBody2D" parent="Walls/PillarWalls" unique_id=1077683767]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PillarWalls/Pillarwall-2" unique_id=2027527409]
+position = Vector2(1016, 432)
+shape = SubResource("RectangleShape2D_pnpg5")
+
+[node name="Pillarwall-3" type="StaticBody2D" parent="Walls/PillarWalls" unique_id=1632808028]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PillarWalls/Pillarwall-3" unique_id=1052908315]
+position = Vector2(283.5, 81.5)
+shape = SubResource("RectangleShape2D_k8dn0")
+
+[node name="Pillarwall-4" type="StaticBody2D" parent="Walls/PillarWalls" unique_id=1825112617]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PillarWalls/Pillarwall-4" unique_id=1145273597]
+position = Vector2(803, 80.75)
+shape = SubResource("RectangleShape2D_b16jt")
+
+[node name="Wall" type="StaticBody2D" parent="Walls" unique_id=1432223199]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" unique_id=145887651]
+position = Vector2(282, 701.5)
+shape = SubResource("RectangleShape2D_gkabi")
+
+[node name="Brownwall" type="StaticBody2D" parent="Walls" unique_id=109170467]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Brownwall" unique_id=1452527377]
+position = Vector2(803, 711)
+shape = SubResource("RectangleShape2D_2t0h6")
+
+[node name="Brownwall-2" type="StaticBody2D" parent="Walls/Brownwall" unique_id=585769525]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Brownwall/Brownwall-2" unique_id=930650848]
+position = Vector2(1271.75, 345)
+shape = SubResource("RectangleShape2D_mea7w")
+
+[node name="Pitwall-1" type="StaticBody2D" parent="Walls" unique_id=1396823742]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1" unique_id=1861977543]
+position = Vector2(759, 538.5)
+shape = SubResource("RectangleShape2D_lmd57")
+
+[node name="Pitwall-2" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=513283408]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-2" unique_id=669386681]
+position = Vector2(808.25, 513.5)
+shape = SubResource("RectangleShape2D_vila3")
+
+[node name="Pitwall-3" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=759140943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-3" unique_id=1452185606]
+position = Vector2(825, 452)
+shape = SubResource("RectangleShape2D_0nuol")
+
+[node name="Pitwall-4" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=1266271252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-4" unique_id=467519607]
+position = Vector2(854.0625, 391)
+shape = SubResource("RectangleShape2D_yi8k7")
+
+[node name="Pitwall-5" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=1685001293]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=1019325884]
+position = Vector2(134.75, 382)
+shape = SubResource("RectangleShape2D_3frb2")
+
+[node name="Pitwall-6" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=585594700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-6" unique_id=1211128257]
+position = Vector2(406.5, 313.5)
+shape = SubResource("RectangleShape2D_51alm")
+
+[node name="Pitwall-7" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=1971969838]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-7" unique_id=1838189104]
+position = Vector2(937.5, 589.5)
+shape = SubResource("RectangleShape2D_ohqjc")
+
+[node name="Pitwall-8" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=71360889]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-8" unique_id=11393221]
+position = Vector2(967, 549.5)
+shape = SubResource("RectangleShape2D_7ymu8")
+
+[node name="Pitwall-9" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=2112205198]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-9" unique_id=625776325]
+position = Vector2(193.5, 239)
+shape = SubResource("RectangleShape2D_3um2h")
+
 [node name="Foreground" type="Sprite2D" parent="." unique_id=574180992]
+z_index = 1
 position = Vector2(641, 358)
+
+[node name="PillarsFG" type="Sprite2D" parent="Foreground" unique_id=971826891]
+position = Vector2(0.49995482, 1.0000147)
+scale = Vector2(0.90696025, 0.91161627)
+texture = ExtResource("2_d8si0")
+metadata/_edit_lock_ = true
+
+[node name="MapExit" type="Area2D" parent="." unique_id=52677053 groups=["map_exits"]]
+script = ExtResource("2_l5t0d")
+target_scene = "uid://kc0wrb6fpl5l"
+destination_spawn = "2ndFlrPlayerSpawn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=869095912]
+position = Vector2(1263.5, 637)
+shape = SubResource("RectangleShape2D_ple0o")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=455868202]
 position = Vector2(1161, 121)
+
+[node name="MapExit2" type="Area2D" parent="." unique_id=1654817076 groups=["map_exits"]]
+script = ExtResource("3_1477u")
+target_scene = "uid://brtxc0l6txwnw"
+destination_spawn = "PlayerSpawn2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit2" unique_id=1271601361]
+position = Vector2(1259.125, 120)
+shape = SubResource("RectangleShape2D_hqqet")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=1124339047]
+position = Vector2(1171, 636)
+
+[node name="Interactable" parent="." unique_id=720223303 instance=ExtResource("5_ple0o")]
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=114311415]
+position = Vector2(1142.5, 705.68176)
+
+[node name="Interactable2" parent="." unique_id=686888498 instance=ExtResource("5_ple0o")]
+
+[node name="CollisionShape2D" parent="Interactable2" index="0" unique_id=114311415]
+position = Vector2(434, 708)
+
+[node name="Interactable3" parent="." unique_id=2060164756 instance=ExtResource("5_ple0o")]
+
+[node name="CollisionShape2D" parent="Interactable3" index="0" unique_id=114311415]
+position = Vector2(120, 708)
+
+[editable path="Interactable"]
+[editable path="Interactable2"]
+[editable path="Interactable3"]

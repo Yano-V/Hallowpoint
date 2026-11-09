@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
 size = Vector2(42.5, 74)
 
-[node name="Player" type="CharacterBody2D" unique_id=929165942]
+[node name="Player" type="CharacterBody2D" unique_id=929165942 groups=["Player", "player"]]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1217655467]
 limit_enabled = false

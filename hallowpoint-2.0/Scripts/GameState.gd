@@ -6,3 +6,6 @@ var return_to_pause := false
 
 # Used to determine where the player should spawn after changing maps.
 var next_spawn_point: String = ""
+
+# Player inventory
+var inventory: Array[String] = []

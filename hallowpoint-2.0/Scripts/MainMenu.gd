@@ -1,6 +1,6 @@
 extends Control
 func _ready():
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_bell_timer_timeout() -> void:
 	$BellSound.play() # Replace with function body.

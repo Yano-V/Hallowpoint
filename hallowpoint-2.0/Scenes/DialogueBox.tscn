@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c177mk3sv8ota"]
+
+[ext_resource type="Texture2D" uid="uid://bita2iy2fbg8o" path="res://Assets/Images/Dialogue Box.png" id="1_m4115"]
+[ext_resource type="Script" uid="uid://cwqa10infu86e" path="res://Scripts/DialogueBox.gd" id="1_mjj0w"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="2_sh7kx"]
+
+[node name="DialogueBox" type="Control" unique_id=2106767254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjj0w")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=2080798609]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.55
+anchor_right = 0.97
+anchor_bottom = 0.97
+offset_top = 14.0
+texture = ExtResource("1_m4115")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+
+[node name="NameLabel" type="Label" parent="Background" unique_id=2015014512]
+visible = false
+layout_mode = 0
+offset_left = 84.600006
+offset_top = -42.0
+offset_right = 302.6
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("2_sh7kx")
+theme_override_font_sizes/font_size = 40
+
+[node name="MessageLabel" type="Label" parent="Background" unique_id=626750018]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 79.600006
+offset_top = 73.0
+offset_right = -65.0
+offset_bottom = -63.400024
+theme_override_colors/font_color = Color(0.07131017, 0.01475807, 0, 1)
+theme_override_fonts/font = ExtResource("2_sh7kx")
+theme_override_font_sizes/font_size = 37
+autowrap_mode = 2
+
+[node name="ContinueLabel" type="Label" parent="Background" unique_id=260565198]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -85.0
+offset_right = -90.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(0.07058824, 0.015686275, 0, 1)
+theme_override_fonts/font = ExtResource("2_sh7kx")
+theme_override_font_sizes/font_size = 20
+text = "Press E to continue."
+horizontal_alignment = 2

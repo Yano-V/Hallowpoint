@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dxuabdpoxrt2f"]
+
+[ext_resource type="Script" uid="uid://dkorw2ex3v7qf" path="res://Scripts/TutorialIG.gd" id="1_4ljts"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="1_btlp6"]
+
+[node name="TutorialIG" type="CanvasLayer" unique_id=950900908]
+script = ExtResource("1_4ljts")
+
+[node name="DialoguePanel" type="Panel" parent="." unique_id=1111357854]
+offset_left = 64.0
+offset_top = 448.0
+offset_right = 1216.0
+offset_bottom = 688.0
+
+[node name="DialogueLabel" type="Label" parent="DialoguePanel" unique_id=162192916]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("1_btlp6")
+theme_override_font_sizes/font_size = 37
+
+[node name="ContinueLabel" type="Label" parent="DialoguePanel" unique_id=65461012]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 184.0
+offset_right = 1120.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("1_btlp6")
+theme_override_font_sizes/font_size = 22
+text = "Press E to continue."
+horizontal_alignment = 2
+autowrap_mode = 2

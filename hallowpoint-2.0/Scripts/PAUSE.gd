@@ -7,6 +7,7 @@ func _ready():
 
 
 func _on_resum_ebtn_pressed() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().paused = false
 	hide()
 

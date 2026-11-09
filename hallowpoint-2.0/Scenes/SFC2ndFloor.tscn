@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://kc0wrb6fpl5l"]
+
+[ext_resource type="Texture2D" uid="uid://t6ttr0qukysw" path="res://Assets/Images/MAP/SFC 2nd Floor.jpg" id="1_820v1"]
+[ext_resource type="Script" uid="uid://b21fwj5vlpw3l" path="res://Scripts/SFC2ndFLR/MapExit.gd" id="2_3d5dq"]
+[ext_resource type="Texture2D" uid="uid://dbkblvmuccnne" path="res://Assets/Images/MAP/SFC 2nd Floor-OldWall.png" id="2_lvoqp"]
+[ext_resource type="PackedScene" uid="uid://drsadiwrmbnqa" path="res://Scenes/Interactable.tscn" id="4_ydrsw"]
+[ext_resource type="PackedScene" uid="uid://boe7677r5uhsj" path="res://Scenes/StatueInteraction.tscn" id="5_fr23s"]
+[ext_resource type="Texture2D" uid="uid://mdtjql681ai0" path="res://Assets/Images/MAP/Rizal Statue.jpg" id="6_ix557"]
+[ext_resource type="Script" uid="uid://co4y6pmcsovl3" path="res://Scripts/SFC2ndFLR/MapExit2.gd" id="7_ix557"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d5dq"]
+size = Vector2(1291, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydrsw"]
+size = Vector2(1285.5, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xxbu"]
+size = Vector2(6, 733)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr23s"]
+size = Vector2(9, 734)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix557"]
+size = Vector2(159.5, 426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkou8"]
+size = Vector2(820.5, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmknd"]
+size = Vector2(680, 71.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbce"]
+size = Vector2(162, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv0cc"]
+size = Vector2(72, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7ov1"]
+size = Vector2(121, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hda8"]
+size = Vector2(77.5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydn2p"]
+size = Vector2(73.5, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvoqp"]
+size = Vector2(65, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60cwd"]
+size = Vector2(22, 411)
+
+[node name="SFC 2ND FLOOR" type="Node2D" unique_id=2014757113]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1495904688]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=2003042503]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_820v1")
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=1470339308]
+
+[node name="OutsideWalls" type="StaticBody2D" parent="Walls" unique_id=844659054]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls" unique_id=1723784167]
+position = Vector2(641, -6.25)
+shape = SubResource("RectangleShape2D_3d5dq")
+
+[node name="BottomOutsideWall" type="StaticBody2D" parent="Walls/OutsideWalls" unique_id=2140909078]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls/BottomOutsideWall" unique_id=406060869]
+position = Vector2(641.25, 722.5)
+shape = SubResource("RectangleShape2D_ydrsw")
+
+[node name="RightOutsideWall" type="StaticBody2D" parent="Walls/OutsideWalls" unique_id=67070061]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls/RightOutsideWall" unique_id=660924761]
+position = Vector2(1285, 360)
+shape = SubResource("RectangleShape2D_1xxbu")
+
+[node name="LeftOutsideWall" type="StaticBody2D" parent="Walls/OutsideWalls" unique_id=56130251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OutsideWalls/LeftOutsideWall" unique_id=984888369]
+position = Vector2(-3.5, 359)
+shape = SubResource("RectangleShape2D_fr23s")
+
+[node name="BigWall" type="StaticBody2D" parent="Walls" unique_id=826096939]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BigWall" unique_id=1243093607]
+position = Vector2(1199.75, 214)
+shape = SubResource("RectangleShape2D_ix557")
+
+[node name="FenceWall" type="StaticBody2D" parent="Walls" unique_id=471589689]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/FenceWall" unique_id=2051175923]
+position = Vector2(412.75, 122)
+shape = SubResource("RectangleShape2D_dkou8")
+
+[node name="RizalWall" type="StaticBody2D" parent="Walls" unique_id=1068159018]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RizalWall" unique_id=1978641686]
+position = Vector2(496, 678.75)
+shape = SubResource("RectangleShape2D_mmknd")
+
+[node name="OldWall" type="StaticBody2D" parent="Walls" unique_id=182725710]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OldWall" unique_id=787278338]
+position = Vector2(845, 483.5)
+shape = SubResource("RectangleShape2D_xpbce")
+
+[node name="PitWall-1" type="StaticBody2D" parent="Walls" unique_id=1754287080]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PitWall-1" unique_id=293375906]
+position = Vector2(267, 525)
+shape = SubResource("RectangleShape2D_kv0cc")
+
+[node name="PitWall-2" type="StaticBody2D" parent="Walls/PitWall-1" unique_id=1241701539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PitWall-1/PitWall-2" unique_id=880484559]
+position = Vector2(342.5, 478)
+shape = SubResource("RectangleShape2D_a7ov1")
+
+[node name="PitWall-3" type="StaticBody2D" parent="Walls/PitWall-1" unique_id=152054166]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PitWall-1/PitWall-3" unique_id=1609538618]
+position = Vector2(378.25, 455)
+shape = SubResource("RectangleShape2D_2hda8")
+
+[node name="RizalWall2" type="StaticBody2D" parent="Walls" unique_id=1428942636]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RizalWall2" unique_id=476372377]
+position = Vector2(454.25, 603.5)
+shape = SubResource("RectangleShape2D_ydn2p")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1154015099]
+z_index = 1
+position = Vector2(641, 358)
+
+[node name="OldWall" type="Sprite2D" parent="Foreground" unique_id=134804478]
+position = Vector2(1.0000114, -0.50001645)
+scale = Vector2(0.91051143, 0.9179293)
+texture = ExtResource("2_lvoqp")
+metadata/_edit_lock_ = true
+
+[node name="MapExit" type="Area2D" parent="." unique_id=1365482170 groups=["map_exits"]]
+script = ExtResource("2_3d5dq")
+target_scene = "uid://bntvjlm3a4r1r"
+destination_spawn = "PlayerSpawn2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=426921662]
+position = Vector2(1242.5, 606.5)
+shape = SubResource("RectangleShape2D_lvoqp")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="2ndFlrPlayerSpawn" type="Marker2D" parent="." unique_id=562635487]
+position = Vector2(1114, 603)
+
+[node name="Interactable" parent="." unique_id=720223303 instance=ExtResource("4_ydrsw")]
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=114311415]
+position = Vector2(970.6926, 11.949581)
+rotation = 3.1487727
+
+[node name="StatueInteraction" parent="." unique_id=297769717 instance=ExtResource("5_fr23s")]
+statue_name = "Rizal Statue"
+dialogue = "This statue is suspicious..."
+statue_view = ExtResource("6_ix557")
+
+[node name="CollisionShape2D" parent="StatueInteraction" index="0" unique_id=1631798380]
+position = Vector2(458, 593.75)
+
+[node name="InteractPrompt" parent="StatueInteraction" index="1" unique_id=551897225]
+visible = true
+offset_left = 400.0
+offset_top = 522.0
+offset_right = 518.0
+offset_bottom = 547.0
+
+[node name="MapExit2" type="Area2D" parent="." unique_id=1146766322 groups=["map_exits"]]
+script = ExtResource("7_ix557")
+target_scene = "uid://3by1t3xcrc8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit2" unique_id=136905513]
+position = Vector2(8, 503)
+shape = SubResource("RectangleShape2D_60cwd")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[editable path="Interactable"]
+[editable path="StatueInteraction"]

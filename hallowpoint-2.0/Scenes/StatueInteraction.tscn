@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://boe7677r5uhsj"]
+
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="1_luk4s"]
+[ext_resource type="Script" uid="uid://de00r3p1tjroj" path="res://Scripts/StatueInteraction.gd" id="1_pf65b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf65b"]
+size = Vector2(122, 89.5)
+
+[node name="StatueInteraction" type="Area2D" unique_id=297769717]
+script = ExtResource("1_pf65b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1631798380]
+position = Vector2(67, 91)
+shape = SubResource("RectangleShape2D_pf65b")
+
+[node name="InteractPrompt" type="Label" parent="." unique_id=551897225]
+visible = false
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 128.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("1_luk4s")
+theme_override_font_sizes/font_size = 20
+text = "E - Interact"

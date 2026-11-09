@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dwyrq5bqiqq1x"]
+
+[ext_resource type="Script" uid="uid://cuofhucf8lf4s" path="res://Scripts/StatueInspect.gd" id="1_ka1u0"]
+
+[node name="StatueInspect" type="Control" unique_id=945180309 groups=["StatueInspectUI"]]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ka1u0")
+
+[node name="StatueView" type="TextureRect" parent="." unique_id=360377027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 6

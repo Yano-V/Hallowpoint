@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://b278r2bsxd14c" path="res://Scenes/MapExit.gd" id="5_gr602"]
 [ext_resource type="Script" uid="uid://1gmv5o5sxcxv" path="res://Scenes/grass_zones.gd" id="6_dcije"]
 [ext_resource type="Script" uid="uid://b0d2p5cg23nkg" path="res://Scenes/concrete_zones.gd" id="7_37otf"]
+[ext_resource type="PackedScene" uid="uid://dk0wa8h1735vi" path="res://Scenes/PickupItem.tscn" id="9_fr62m"]
+[ext_resource type="Texture2D" uid="uid://cy32dfo7g6uha" path="res://Assets/Images/PuzzleItems/GoldenShard.png" id="10_j6ti7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpucp"]
 size = Vector2(103.950066, 79.42063)
@@ -439,3 +441,21 @@ debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 position = Vector2(596, 15.5)
 shape = SubResource("RectangleShape2D_4q8av")
 debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("9_fr62m")]
+item_name = "Golden Shard"
+
+[node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
+position = Vector2(145.99994, 432.99997)
+texture = ExtResource("10_j6ti7")
+
+[node name="CollisionShape2D" parent="PickupItem" index="1" unique_id=296146495]
+position = Vector2(146, 433)
+
+[node name="Prompt" parent="PickupItem" index="2" unique_id=1027660579]
+offset_left = 111.0
+offset_top = 371.0
+offset_right = 289.0
+offset_bottom = 424.0
+
+[editable path="PickupItem"]
