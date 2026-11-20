@@ -52,6 +52,18 @@ theme_override_fonts/font = ExtResource("2_sh7kx")
 theme_override_font_sizes/font_size = 37
 autowrap_mode = 2
 
+[node name="InspectLabel" type="Label" parent="Background" unique_id=1016374977]
+visible = false
+layout_mode = 0
+offset_left = 923.6
+offset_top = 176.0
+offset_right = 1104.6
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0.07058824, 0.015686275, 0, 1)
+theme_override_fonts/font = ExtResource("2_sh7kx")
+theme_override_font_sizes/font_size = 20
+text = "Press F to inspect"
+
 [node name="ContinueLabel" type="Label" parent="Background" unique_id=260565198]
 layout_mode = 1
 anchors_preset = -1

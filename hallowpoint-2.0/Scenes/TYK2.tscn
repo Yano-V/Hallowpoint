@@ -536,22 +536,35 @@ debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 position = Vector2(100, 623)
 
 [node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("9_q1tny")]
-position = Vector2(464, -128)
 item_name = "Shovel"
+can_inspect = false
+readable_text = ""
+can_open = false
+contains_item = false
+contained_item_name = "Magnifying Glass"
 
 [node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
+position = Vector2(1112, 223.99997)
 texture = ExtResource("10_am8nu")
 
+[node name="CollisionShape2D" parent="PickupItem" index="1" unique_id=296146495]
+position = Vector2(1112, 224.00002)
+scale = Vector2(0.9999993, 0.9999993)
+
 [node name="Prompt" parent="PickupItem" index="2" unique_id=1027660579]
-offset_top = 288.0
-offset_bottom = 344.0
+offset_left = 1032.0
+offset_top = 176.0
+offset_right = 1210.0
+offset_bottom = 232.0
 
 [node name="Interactable" parent="." unique_id=720223303 instance=ExtResource("11_8an32")]
 interaction_type = 2
 required_item = "Magnifying Glass"
+auto_transition_when_unlocked = true
+next_map = "uid://2dp04kv36w0h"
 
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=114311415]
-position = Vector2(8, 216)
+position = Vector2(-24, 208)
 
 [node name="Interactable2" parent="." unique_id=33721783 instance=ExtResource("11_8an32")]
 interaction_type = 1
@@ -559,6 +572,9 @@ interaction_type = 1
 [node name="CollisionShape2D" parent="Interactable2" index="0" unique_id=114311415]
 position = Vector2(208, 6.0000005)
 rotation = 1.566883
+
+[node name="PlayerSpawn3" type="Marker2D" parent="." unique_id=682770842]
+position = Vector2(88, 216)
 
 [editable path="PickupItem"]
 [editable path="Interactable"]

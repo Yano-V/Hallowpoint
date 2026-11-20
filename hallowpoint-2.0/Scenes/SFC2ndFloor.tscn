@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://kc0wrb6fpl5l"]
 
 [ext_resource type="Texture2D" uid="uid://t6ttr0qukysw" path="res://Assets/Images/MAP/SFC 2nd Floor.jpg" id="1_820v1"]
+[ext_resource type="Script" uid="uid://b7kwhnmw84sis" path="res://Scripts/SFC2ndFLR/SFC2ndFloor.gd" id="1_dkou8"]
 [ext_resource type="Script" uid="uid://b21fwj5vlpw3l" path="res://Scripts/SFC2ndFLR/MapExit.gd" id="2_3d5dq"]
 [ext_resource type="Texture2D" uid="uid://dbkblvmuccnne" path="res://Assets/Images/MAP/SFC 2nd Floor-OldWall.png" id="2_lvoqp"]
+[ext_resource type="Script" uid="uid://ddmllsnqbj8d3" path="res://Scripts/SFC2ndFLR/ConcreteZone.gd" id="3_ix557"]
 [ext_resource type="PackedScene" uid="uid://drsadiwrmbnqa" path="res://Scenes/Interactable.tscn" id="4_ydrsw"]
 [ext_resource type="PackedScene" uid="uid://boe7677r5uhsj" path="res://Scenes/StatueInteraction.tscn" id="5_fr23s"]
-[ext_resource type="Texture2D" uid="uid://mdtjql681ai0" path="res://Assets/Images/MAP/Rizal Statue.jpg" id="6_ix557"]
 [ext_resource type="Script" uid="uid://co4y6pmcsovl3" path="res://Scripts/SFC2ndFLR/MapExit2.gd" id="7_ix557"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3d5dq"]
@@ -44,6 +45,9 @@ size = Vector2(77.5, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydn2p"]
 size = Vector2(73.5, 65)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_262x5"]
+size = Vector2(1191, 431)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvoqp"]
 size = Vector2(65, 205)
 
@@ -51,6 +55,7 @@ size = Vector2(65, 205)
 size = Vector2(22, 411)
 
 [node name="SFC 2ND FLOOR" type="Node2D" unique_id=2014757113]
+script = ExtResource("1_dkou8")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1495904688]
 position = Vector2(641, 358)
@@ -144,6 +149,14 @@ scale = Vector2(0.91051143, 0.9179293)
 texture = ExtResource("2_lvoqp")
 metadata/_edit_lock_ = true
 
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=615179446]
+script = ExtResource("3_ix557")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=329280670]
+position = Vector2(596.5, 503.5)
+shape = SubResource("RectangleShape2D_262x5")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
 [node name="MapExit" type="Area2D" parent="." unique_id=1365482170 groups=["map_exits"]]
 script = ExtResource("2_3d5dq")
 target_scene = "uid://bntvjlm3a4r1r"
@@ -164,15 +177,12 @@ position = Vector2(970.6926, 11.949581)
 rotation = 3.1487727
 
 [node name="StatueInteraction" parent="." unique_id=297769717 instance=ExtResource("5_fr23s")]
-statue_name = "Rizal Statue"
 dialogue = "This statue is suspicious..."
-statue_view = ExtResource("6_ix557")
 
 [node name="CollisionShape2D" parent="StatueInteraction" index="0" unique_id=1631798380]
 position = Vector2(458, 593.75)
 
 [node name="InteractPrompt" parent="StatueInteraction" index="1" unique_id=551897225]
-visible = true
 offset_left = 400.0
 offset_top = 522.0
 offset_right = 518.0

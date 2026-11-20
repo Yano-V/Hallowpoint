@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://dwyrq5bqiqq1x"]
 
 [ext_resource type="Script" uid="uid://cuofhucf8lf4s" path="res://Scripts/StatueInspect.gd" id="1_ka1u0"]
+[ext_resource type="Texture2D" uid="uid://t2dgdhnbl480" path="res://Assets/Images/PuzzleItems/StoneBook.png" id="2_cxsyd"]
+[ext_resource type="Texture2D" uid="uid://mdtjql681ai0" path="res://Assets/Images/MAP/Rizal Statue.jpg" id="2_hhu7c"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="2_tpjo4"]
+[ext_resource type="Texture2D" uid="uid://c55hmoohgvq4x" path="res://Assets/Images/MAP/RIzal Statue-OPEN.png" id="3_p18gy"]
+[ext_resource type="Texture2D" uid="uid://cy32dfo7g6uha" path="res://Assets/Images/PuzzleItems/GoldenShard.png" id="3_y42o0"]
+[ext_resource type="Texture2D" uid="uid://dn20pejto1dvr" path="res://Assets/Images/PuzzleItems/VotiveCandle.png" id="5_j4flr"]
 
 [node name="StatueInspect" type="Control" unique_id=945180309 groups=["StatueInspectUI"]]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,12 +16,97 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ka1u0")
+rizal_closed_texture = ExtResource("2_hhu7c")
+rizal_opened_texture = ExtResource("3_p18gy")
 
 [node name="StatueView" type="TextureRect" parent="." unique_id=360377027]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="DarkBackground" type="ColorRect" parent="." unique_id=1539174691]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 631.0
+offset_right = 1279.0
+offset_bottom = 716.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="StoneBook" type="TextureRect" parent="." unique_id=1516847563]
+visible = false
+layout_mode = 0
+offset_left = 383.0
+offset_top = 311.0
+offset_right = 511.0
+offset_bottom = 448.0
+texture = ExtResource("2_cxsyd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CandleImage" type="TextureRect" parent="." unique_id=2013509646]
+visible = false
+layout_mode = 0
+offset_left = 822.0
+offset_top = 675.0
+offset_right = 861.0
+offset_bottom = 712.0
+mouse_filter = 2
+texture = ExtResource("5_j4flr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InscriptionPanel" type="Panel" parent="." unique_id=898162474]
+visible = false
+layout_mode = 0
+offset_left = 331.0
+offset_top = 260.0
+offset_right = 612.0
+offset_bottom = 449.0
+
+[node name="InscriptionText" type="Label" parent="InscriptionPanel" unique_id=432066349]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("2_tpjo4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="ShardImage" type="TextureRect" parent="." unique_id=1490269212]
+visible = false
+layout_mode = 0
+offset_left = 800.0
+offset_top = 593.0
+offset_right = 886.0
+offset_bottom = 659.0
+texture = ExtResource("3_y42o0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ActionPrompt" type="Label" parent="." unique_id=1930707380]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 636.0
+offset_right = 1167.0
+offset_bottom = 673.0
+theme_override_fonts/font = ExtResource("2_tpjo4")
+theme_override_font_sizes/font_size = 30
+text = "E - Examine Stone Book"
+
+[node name="ExitPrompt" type="Label" parent="." unique_id=382534949]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 672.0
+offset_right = 1213.0
+offset_bottom = 709.0
+theme_override_fonts/font = ExtResource("2_tpjo4")
+theme_override_font_sizes/font_size = 30
+text = "Press E to exit the scene"

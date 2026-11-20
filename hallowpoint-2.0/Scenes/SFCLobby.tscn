@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bntvjlm3a4r1r"]
 
+[ext_resource type="Script" uid="uid://dknw1q1dr8ha7" path="res://Scripts/SFCLobby/SFCLobby.gd" id="1_lb727"]
 [ext_resource type="Texture2D" uid="uid://dqbcu5xwl43bq" path="res://Assets/Images/MAP/SFC Lobby.jpg" id="1_owrtc"]
 [ext_resource type="Texture2D" uid="uid://b6sxxe2vu18g" path="res://Assets/Images/MAP/PILLARSFG.png" id="2_d8si0"]
 [ext_resource type="Script" uid="uid://ceipqc47io8i7" path="res://Scripts/SFCLobby/MapExit.gd" id="2_l5t0d"]
 [ext_resource type="Script" uid="uid://de5kymli3inua" path="res://Scripts/SFCLobby/MapExit2.gd" id="3_1477u"]
+[ext_resource type="Script" uid="uid://bkq2jv2qaefwe" path="res://Scripts/SFCLobby/ConcreteZone.gd" id="3_hqqet"]
 [ext_resource type="PackedScene" uid="uid://drsadiwrmbnqa" path="res://Scenes/Interactable.tscn" id="5_ple0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owrtc"]
@@ -66,6 +68,9 @@ size = Vector2(104, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3um2h"]
 size = Vector2(35, 49)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_im3oq"]
+size = Vector2(1237, 687)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ple0o"]
 size = Vector2(25, 102)
 
@@ -73,6 +78,7 @@ size = Vector2(25, 102)
 size = Vector2(30.25, 99)
 
 [node name="SFC Lobby" type="Node2D" unique_id=895620955]
+script = ExtResource("1_lb727")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=702397529]
 position = Vector2(641, 358)
@@ -181,6 +187,35 @@ shape = SubResource("RectangleShape2D_yi8k7")
 position = Vector2(134.75, 382)
 shape = SubResource("RectangleShape2D_3frb2")
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=391112069]
+position = Vector2(57, 115)
+shape = SubResource("RectangleShape2D_3frb2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=1394291296]
+position = Vector2(137, 97)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_3frb2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=1097385750]
+position = Vector2(109, 587)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_3frb2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=1792691873]
+position = Vector2(1164.0001, 269.00003)
+rotation = 1.8325958
+shape = SubResource("RectangleShape2D_3frb2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=617748907]
+position = Vector2(1011, 169)
+rotation = 1.8325958
+shape = SubResource("RectangleShape2D_3frb2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-5" unique_id=1787052630]
+position = Vector2(952, 133.00002)
+rotation = 2.0943952
+shape = SubResource("RectangleShape2D_3frb2")
+
 [node name="Pitwall-6" type="StaticBody2D" parent="Walls/Pitwall-1" unique_id=585594700]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pitwall-1/Pitwall-6" unique_id=1211128257]
@@ -215,6 +250,14 @@ scale = Vector2(0.90696025, 0.91161627)
 texture = ExtResource("2_d8si0")
 metadata/_edit_lock_ = true
 
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=287677325]
+script = ExtResource("3_hqqet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=703853179]
+position = Vector2(619.5, 375.5)
+shape = SubResource("RectangleShape2D_im3oq")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
 [node name="MapExit" type="Area2D" parent="." unique_id=52677053 groups=["map_exits"]]
 script = ExtResource("2_l5t0d")
 target_scene = "uid://kc0wrb6fpl5l"
@@ -244,7 +287,7 @@ position = Vector2(1171, 636)
 [node name="Interactable" parent="." unique_id=720223303 instance=ExtResource("5_ple0o")]
 
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=114311415]
-position = Vector2(1142.5, 705.68176)
+position = Vector2(1145, 726)
 
 [node name="Interactable2" parent="." unique_id=686888498 instance=ExtResource("5_ple0o")]
 
@@ -254,7 +297,7 @@ position = Vector2(434, 708)
 [node name="Interactable3" parent="." unique_id=2060164756 instance=ExtResource("5_ple0o")]
 
 [node name="CollisionShape2D" parent="Interactable3" index="0" unique_id=114311415]
-position = Vector2(120, 708)
+position = Vector2(121, 718)
 
 [editable path="Interactable"]
 [editable path="Interactable2"]

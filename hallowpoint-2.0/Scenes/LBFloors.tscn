@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://bkoygmu68s83u"]
+
+[ext_resource type="Texture2D" uid="uid://josnfarvj367" path="res://Assets/Images/MAP/LB Floors.jpg" id="1_djn1i"]
+[ext_resource type="Script" uid="uid://denjpk1kramr6" path="res://Scripts/LB/LBFloors/LBFloors.gd" id="1_rxv3k"]
+[ext_resource type="Script" uid="uid://vpds0aaiqrol" path="res://Scripts/LB/LBFloors/MapExit.gd" id="2_op33i"]
+[ext_resource type="Texture2D" uid="uid://dpqysj7ef7a2g" path="res://Assets/Images/MAP/LBFloorsFG.png" id="2_p7yqg"]
+[ext_resource type="Script" uid="uid://dxlkjsyahnxqg" path="res://Scripts/LB/LBFloors/MapExit2.gd" id="3_k3fri"]
+[ext_resource type="Script" uid="uid://jme7ap18vtr4" path="res://Scripts/LB/LBFloors/ConcreteZone.gd" id="3_yfety"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djn1i"]
+size = Vector2(1281, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op33i"]
+size = Vector2(1281.5, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3fri"]
+size = Vector2(15.5, 639)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7yqg"]
+size = Vector2(10, 641)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfety"]
+size = Vector2(361.44043, 13.870483)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxv3k"]
+size = Vector2(217.5, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr7bl"]
+size = Vector2(393.00244, 11.335175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dncdk"]
+size = Vector2(1094.5, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82nsa"]
+size = Vector2(60, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnmb2"]
+size = Vector2(50, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwal"]
+size = Vector2(1277, 565)
+
+[node name="LBFloors" type="Node2D" unique_id=416697268]
+script = ExtResource("1_rxv3k")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1137110472]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=89214700]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_djn1i")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=1489956759]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=388655776]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=1633510853]
+position = Vector2(641.5, 79)
+shape = SubResource("RectangleShape2D_djn1i")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=1994373840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=86625103]
+position = Vector2(641.25, 724.5)
+shape = SubResource("RectangleShape2D_op33i")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1445472481]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1293521046]
+position = Vector2(-7.25, 407.5)
+shape = SubResource("RectangleShape2D_k3fri")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=470136898]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1201734948]
+position = Vector2(1287, 407.5)
+shape = SubResource("RectangleShape2D_p7yqg")
+
+[node name="Stairs" type="StaticBody2D" parent="Walls" unique_id=1671595459]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Stairs" unique_id=523453572]
+position = Vector2(490.99994, 403)
+rotation = 0.36217517
+shape = SubResource("RectangleShape2D_yfety")
+
+[node name="Stairs2" type="StaticBody2D" parent="Walls/Stairs" unique_id=293850192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Stairs/Stairs2" unique_id=626905780]
+position = Vector2(780.25, 477.25)
+shape = SubResource("RectangleShape2D_rxv3k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Stairs" unique_id=483732243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Stairs/StaticBody2D" unique_id=450796239]
+position = Vector2(1078.9999, 542)
+rotation = 0.3357757
+shape = SubResource("RectangleShape2D_nr7bl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=1033262313]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=1880686651]
+position = Vector2(731.75, 286)
+shape = SubResource("RectangleShape2D_dncdk")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1195915495]
+z_index = 1
+position = Vector2(641, 358)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=2021295543]
+position = Vector2(0.4999466, 7.500003)
+scale = Vector2(0.90980107, 0.94065654)
+texture = ExtResource("2_p7yqg")
+metadata/_edit_lock_ = true
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=206327809]
+position = Vector2(251, 565)
+
+[node name="MapExit" type="Area2D" parent="." unique_id=903735938 groups=["map_exits"]]
+script = ExtResource("2_op33i")
+target_scene = "uid://2dp04kv36w0h"
+destination_spawn = "PlayerSpawn4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=541356480]
+position = Vector2(723, 633)
+shape = SubResource("RectangleShape2D_82nsa")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="MapExit2" type="Area2D" parent="." unique_id=286959758 groups=["map_exits"]]
+script = ExtResource("3_k3fri")
+target_scene = "uid://nc5lmlsdfqes"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit2" unique_id=120267815]
+position = Vector2(1256, 223)
+shape = SubResource("RectangleShape2D_nnmb2")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=703000341]
+position = Vector2(1137, 224)
+
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=226928687]
+script = ExtResource("3_yfety")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=523013375]
+position = Vector2(643, 442)
+shape = SubResource("RectangleShape2D_3wwal")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)

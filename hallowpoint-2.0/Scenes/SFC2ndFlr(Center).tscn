@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://3by1t3xcrc8"]
 
+[ext_resource type="Script" uid="uid://dcf8d2seuq0pa" path="res://Scripts/SFC2ndFlr(Center)/SFC2ndFlr(center).gd" id="1_chgj7"]
 [ext_resource type="Texture2D" uid="uid://bjq8k3vh1mjmq" path="res://Assets/Images/MAP/SFC 2nd Floor (Center).jpg" id="1_la0o6"]
 [ext_resource type="Script" uid="uid://corsb4s6srylh" path="res://Scripts/SFC2ndFlr(Center)/MapExit.gd" id="2_ey1xm"]
+[ext_resource type="Script" uid="uid://c1fkfvhcpegeb" path="res://Scripts/SFC2ndFlr(Center)/ConcreteZone.gd" id="2_tdlfh"]
 [ext_resource type="Script" uid="uid://hbwc65njfw4t" path="res://Scripts/SFC2ndFlr(Center)/MapExit2.gd" id="3_8xb1t"]
+[ext_resource type="PackedScene" uid="uid://dk0wa8h1735vi" path="res://Scenes/PickupItem.tscn" id="4_w5i7e"]
+[ext_resource type="Texture2D" uid="uid://dn7hoi6s2fciv" path="res://Assets/Images/PuzzleItems/VotiveCandle-unlit.png" id="5_w5i7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey1xm"]
 size = Vector2(28, 726)
@@ -22,6 +26,24 @@ size = Vector2(1294, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdlfh"]
 size = Vector2(233, 7)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsuhj"]
+size = Vector2(79.5, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37hep"]
+size = Vector2(49, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_showg"]
+size = Vector2(49, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb3q5"]
+size = Vector2(95, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l78c3"]
+size = Vector2(97.5, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wve34"]
+size = Vector2(1238, 679)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8jle"]
 size = Vector2(54.5, 53)
 
@@ -29,6 +51,7 @@ size = Vector2(54.5, 53)
 size = Vector2(134, 22)
 
 [node name="SFC2ndFlr(Center)" type="Node2D" unique_id=1769941390]
+script = ExtResource("1_chgj7")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=320285614]
 position = Vector2(641, 358)
@@ -77,7 +100,172 @@ shape = SubResource("RectangleShape2D_la0o6")
 position = Vector2(638, 725.5)
 shape = SubResource("RectangleShape2D_tdlfh")
 
+[node name="randome" type="StaticBody2D" parent="Walls" unique_id=987253779]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/randome" unique_id=1112343136]
+position = Vector2(985.25, 619.5)
+shape = SubResource("RectangleShape2D_gsuhj")
+
+[node name="Chairs" type="StaticBody2D" parent="Walls" unique_id=118534893]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Chairs" unique_id=1383417111]
+position = Vector2(292.5, 148)
+shape = SubResource("RectangleShape2D_37hep")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Chairs" unique_id=87076294]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Chairs/StaticBody2D" unique_id=1611402280]
+position = Vector2(103.5, 219.5)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="ChairsWall" type="StaticBody2D" parent="Walls/Chairs" unique_id=1041439654]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1670487261]
+position = Vector2(303, 329)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=757075718]
+position = Vector2(244, 219)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=266927697]
+position = Vector2(152, 518)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1042852286]
+position = Vector2(372, 527)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1170269099]
+position = Vector2(782, 429)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=689817553]
+position = Vector2(1031, 478)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=2118463483]
+position = Vector2(1098, 317)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1014545581]
+position = Vector2(998, 363)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=2046355684]
+position = Vector2(899, 433)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1235878700]
+position = Vector2(949, 286)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=282162713]
+position = Vector2(1039, 255)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1281020457]
+position = Vector2(971, 187)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=364772841]
+position = Vector2(891, 156)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=44093183]
+position = Vector2(1045, 123)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=511640831]
+position = Vector2(813, 92)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1781176885]
+position = Vector2(745, 164)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1876715071]
+position = Vector2(772, 263)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1142707971]
+position = Vector2(672, 343)
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=455294030]
+position = Vector2(415.9999, 353)
+rotation = 0.022716304
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=108613034]
+position = Vector2(474.99997, 239.99998)
+rotation = 0.022716304
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1272777497]
+position = Vector2(404, 137.99995)
+rotation = 0.022716304
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=245576267]
+position = Vector2(352, 236)
+rotation = 0.022716304
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1192742635]
+position = Vector2(181.99998, 131.99997)
+rotation = 0.022716304
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1765324709]
+position = Vector2(202.99998, 333.00003)
+rotation = 0.022716304
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=292376695]
+position = Vector2(127, 294)
+rotation = 0.050462622
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1383880144]
+position = Vector2(302, 412.99997)
+rotation = 0.050462622
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=909459829]
+position = Vector2(211, 444)
+rotation = 0.050462622
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1533559422]
+position = Vector2(853, 236.99997)
+rotation = 0.050462622
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Walls/Chairs/ChairsWall" unique_id=1280723202]
+position = Vector2(840, 356)
+rotation = 0.050462622
+shape = SubResource("RectangleShape2D_showg")
+
+[node name="PotHole" type="StaticBody2D" parent="Walls" unique_id=482699173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/PotHole" unique_id=2080046880]
+position = Vector2(582.5, 147.5)
+shape = SubResource("RectangleShape2D_tb3q5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/PotHole" unique_id=1273936440]
+position = Vector2(612.25, 119)
+shape = SubResource("RectangleShape2D_l78c3")
+
 [node name="Foreground" type="Sprite2D" parent="." unique_id=607129703]
+
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=1916668527]
+script = ExtResource("2_tdlfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=546683713]
+position = Vector2(633, 340.5)
+shape = SubResource("RectangleShape2D_wve34")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1578719749]
 position = Vector2(1176, 77)
@@ -103,3 +291,30 @@ debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
 
 [node name="PlayerSpawn2" type="Marker2D" parent="." unique_id=980300791]
 position = Vector2(640, 639)
+
+[node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("4_w5i7e")]
+item_name = "Votive Candle"
+can_inspect = false
+readable_text = ""
+can_open = false
+contains_item = false
+contained_item_name = "Magnifying Glass"
+
+[node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
+position = Vector2(50.829296, 438.00803)
+rotation = 0.0
+scale = Vector2(0.039198525, 0.03633931)
+texture = ExtResource("5_w5i7e")
+
+[node name="CollisionShape2D" parent="PickupItem" index="1" unique_id=296146495]
+position = Vector2(51, 439)
+rotation = 0.0
+
+[node name="Prompt" parent="PickupItem" index="2" unique_id=1027660579]
+offset_left = 40.0
+offset_top = 372.00003
+offset_right = 218.0
+offset_bottom = 428.00003
+rotation = -0.0047638062
+
+[editable path="PickupItem"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cutqosgehytvm"]
+
+[ext_resource type="Texture2D" uid="uid://c55hmoohgvq4x" path="res://Assets/Images/MAP/RIzal Statue-OPEN.png" id="1_if5of"]
+
+[node name="RIZAL-OPEN" type="Node2D" unique_id=62089468]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=87928490]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=946050167]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_if5of")
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=1759857322]
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1167067603]

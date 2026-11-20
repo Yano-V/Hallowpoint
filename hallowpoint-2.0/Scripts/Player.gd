@@ -3,6 +3,9 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 
+# Movement control
+var can_move: bool = true
+
 # Character textures
 var idle_tex: Texture2D
 var left_tex: Texture2D
@@ -22,7 +25,11 @@ var current_surface: String = ""
 func _ready() -> void:
 	# Add Player to the player group
 	add_to_group("player")
-	
+
+	# Adjust footstep volumes
+	concrete_footstep.volume_db = 3.0
+	grass_footstep.volume_db = 0.0
+
 	# Load the selected character's textures
 	if GameManager.selected_character == "boy":
 		idle_tex = preload("res://Assets/Images/CHARACTERS/BOY.png")
@@ -36,7 +43,7 @@ func _ready() -> void:
 
 	$Sprite2D.texture = idle_tex
 
-	# Connect the timers
+	# Connect footstep timers
 	if not grass_step_timer.timeout.is_connected(_on_grass_step_timer_timeout):
 		grass_step_timer.timeout.connect(_on_grass_step_timer_timeout)
 
@@ -45,6 +52,13 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	# Stop movement while interacting with a puzzle
+	if not can_move:
+		velocity = Vector2.ZERO
+		$Sprite2D.texture = idle_tex
+		stop_footsteps()
+		return
+
 	var direction := Vector2.ZERO
 
 	# WASD movement
@@ -94,6 +108,16 @@ func _physics_process(_delta: float) -> void:
 		stop_footsteps()
 
 
+# Called when opening or closing a puzzle
+func set_movement_enabled(enabled: bool) -> void:
+	can_move = enabled
+
+	if not can_move:
+		velocity = Vector2.ZERO
+		$Sprite2D.texture = idle_tex
+		stop_footsteps()
+
+
 func enter_footstep_surface(surface: String) -> void:
 	if surface == "grass":
 		grass_overlaps += 1
@@ -134,12 +158,12 @@ func stop_footsteps() -> void:
 
 
 func _on_grass_step_timer_timeout() -> void:
-	if current_surface == "grass" and velocity.length() > 0:
+	if can_move and current_surface == "grass" and velocity.length() > 0:
 		grass_footstep.play()
 		grass_step_timer.start()
 
 
 func _on_concrete_step_timer_timeout() -> void:
-	if current_surface == "concrete" and velocity.length() > 0:
+	if can_move and current_surface == "concrete" and velocity.length() > 0:
 		concrete_footstep.play()
 		concrete_step_timer.start()

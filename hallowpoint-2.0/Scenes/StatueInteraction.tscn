@@ -2,12 +2,16 @@
 
 [ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="1_luk4s"]
 [ext_resource type="Script" uid="uid://de00r3p1tjroj" path="res://Scripts/StatueInteraction.gd" id="1_pf65b"]
+[ext_resource type="Texture2D" uid="uid://mdtjql681ai0" path="res://Assets/Images/MAP/Rizal Statue.jpg" id="2_ha7to"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf65b"]
 size = Vector2(122, 89.5)
 
 [node name="StatueInteraction" type="Area2D" unique_id=297769717]
 script = ExtResource("1_pf65b")
+statue_name = "Rizal Statue"
+statue_view = ExtResource("2_ha7to")
+is_rizal_statue = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1631798380]
 position = Vector2(67, 91)

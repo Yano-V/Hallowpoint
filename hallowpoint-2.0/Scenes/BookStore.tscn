@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://dlfpa24hp2yrd"]
 
+[ext_resource type="Script" uid="uid://c8d0c3vm8p0kh" path="res://Scripts/Bookstore/BookStore.gd" id="1_41mkp"]
 [ext_resource type="Texture2D" uid="uid://dimfmbejvabx3" path="res://Assets/Images/MAP/SFC Bookstore.jpg" id="1_rccw2"]
 [ext_resource type="Script" uid="uid://1nmcq3lgs1n8" path="res://Scripts/SFC2ndFLR/BookStore.gd" id="2_fru7l"]
+[ext_resource type="Script" uid="uid://47mxlf8ek3dm" path="res://Scripts/Bookstore/ConcreteZone.gd" id="2_mr5xh"]
+[ext_resource type="PackedScene" uid="uid://dk0wa8h1735vi" path="res://Scenes/PickupItem.tscn" id="3_h8fj5"]
+[ext_resource type="Texture2D" uid="uid://bveux2lti8j8w" path="res://Assets/Images/PuzzleItems/UEHistoryBook-OPEN.png" id="4_joeay"]
+[ext_resource type="Texture2D" uid="uid://dpgfejm0qfvur" path="res://Assets/Images/PuzzleItems/UEHistoryBook-edited.png" id="4_negqd"]
+[ext_resource type="Texture2D" uid="uid://twsw31hkq5nm" path="res://Assets/Images/PuzzleItems/BookReceipt.png" id="5_negqd"]
+[ext_resource type="Texture2D" uid="uid://bw272jwvrii4t" path="res://Assets/Images/PuzzleItems/MagnifyingGlass.png" id="6_dwajm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fru7l"]
 size = Vector2(15, 734)
@@ -16,7 +23,7 @@ size = Vector2(990, 9.5)
 size = Vector2(25, 726.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rccw2"]
-size = Vector2(695, 210)
+size = Vector2(695, 233)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joeay"]
 size = Vector2(56.5, 307)
@@ -24,10 +31,14 @@ size = Vector2(56.5, 307)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwajm"]
 size = Vector2(50, 349.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41mkp"]
+size = Vector2(943, 712)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mr5xh"]
 size = Vector2(165, 20)
 
 [node name="BookStore" type="Node2D" unique_id=862903787]
+script = ExtResource("1_41mkp")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1812537577]
 position = Vector2(641, 358)
@@ -67,7 +78,7 @@ shape = SubResource("RectangleShape2D_negqd")
 [node name="BigWall" type="StaticBody2D" parent="Walls" unique_id=1421485719]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BigWall" unique_id=1967346403]
-position = Vector2(927.5, 106)
+position = Vector2(927.5, 117.5)
 shape = SubResource("RectangleShape2D_rccw2")
 
 [node name="ChairWall" type="StaticBody2D" parent="Walls" unique_id=333181456]
@@ -84,6 +95,14 @@ shape = SubResource("RectangleShape2D_dwajm")
 
 [node name="Foreground" type="Sprite2D" parent="." unique_id=1286812919]
 
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=379909777]
+script = ExtResource("2_mr5xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=1459451632]
+position = Vector2(795.5, 363)
+shape = SubResource("RectangleShape2D_41mkp")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
 [node name="MapExit" type="Area2D" parent="." unique_id=959729403 groups=["map_exits"]]
 script = ExtResource("2_fru7l")
 target_scene = "uid://3by1t3xcrc8"
@@ -96,3 +115,67 @@ debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=248806616]
 position = Vector2(443, 53)
+
+[node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("3_h8fj5")]
+position = Vector2(558, 215)
+rotation = 0.109366685
+item_name = "History Book"
+can_inspect = true
+inspection_texture = ExtResource("4_negqd")
+readable_text = ""
+can_open = true
+opened_texture = ExtResource("4_joeay")
+contains_item = true
+contained_item_name = "Magnifying Glass"
+contained_item_texture = ExtResource("6_dwajm")
+
+[node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
+position = Vector2(685.63184, 369.25952)
+rotation = 0.17131215
+scale = Vector2(0.047454286, 0.048948806)
+texture = ExtResource("4_negqd")
+
+[node name="CollisionShape2D" parent="PickupItem" index="1" unique_id=296146495]
+position = Vector2(686.299, 368.2917)
+
+[node name="Prompt" parent="PickupItem" index="2" unique_id=1027660579]
+offset_left = 580.2657
+offset_top = 382.9527
+offset_right = 758.2657
+offset_bottom = 438.84204
+rotation = -0.11597558
+
+[node name="PickupItem2" parent="." unique_id=1934668732 instance=ExtResource("3_h8fj5")]
+rotation = 0.124465026
+item_name = "Book Receipt"
+can_inspect = true
+inspection_texture = ExtResource("5_negqd")
+readable_text = "Book Receipt
+
+Book Title: Kasaysayan ng Silangan
+Date: Unknown
+
+Note:
+The truth is hidden in plain sight, where the great hero watches over the faithful."
+can_open = false
+contains_item = false
+contained_item_name = "Magnifying Glass"
+
+[node name="Sprite2D" parent="PickupItem2" index="0" unique_id=615337673]
+position = Vector2(1213.0981, 217.87476)
+rotation = -0.035730362
+scale = Vector2(0.03763702, 0.038477726)
+texture = ExtResource("5_negqd")
+
+[node name="CollisionShape2D" parent="PickupItem2" index="1" unique_id=296146495]
+position = Vector2(1216.0602, 214.69435)
+
+[node name="Prompt" parent="PickupItem2" index="2" unique_id=1027660579]
+offset_left = 1128.2383
+offset_top = 165.21414
+offset_right = 1306.2383
+offset_bottom = 221.21414
+rotation = -0.1256421
+
+[editable path="PickupItem"]
+[editable path="PickupItem2"]

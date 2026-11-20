@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dxuabdpoxrt2f" path="res://Scenes/TutorialIG.tscn" id="8_2irst"]
 [ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="8_bf53h"]
 [ext_resource type="PackedScene" uid="uid://dwyrq5bqiqq1x" path="res://Scenes/StatueInspect.tscn" id="9_71axn"]
+[ext_resource type="PackedScene" uid="uid://jhtrkqi7tnqf" path="res://Scenes/ItemInspectUI.tscn" id="10_dahhg"]
+[ext_resource type="Script" uid="uid://cpc4p8f2wcpoq" path="res://Scripts/LocationIndicator.gd" id="11_3so38"]
 
 [node name="Game" type="Node2D" unique_id=1994847023]
 script = ExtResource("1_b2bpf")
@@ -62,6 +64,27 @@ theme_override_font_sizes/font_size = 30
 text = "Press E to interact."
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="ItemInspectUI" parent="UI" unique_id=431691471 instance=ExtResource("10_dahhg")]
+visible = false
+
+[node name="LocationIndicator" type="Control" parent="UI" unique_id=352707757]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+script = ExtResource("11_3so38")
+
+[node name="Background" type="PanelContainer" parent="UI/LocationIndicator" unique_id=1440719096]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LocationLabel" type="Label" parent="UI/LocationIndicator/Background" unique_id=1159076457]
+layout_mode = 2
+text = "Tan Yan Kee Garden"
 
 [node name="TutorialIG" parent="." unique_id=950900908 instance=ExtResource("8_2irst")]
 process_mode = 3

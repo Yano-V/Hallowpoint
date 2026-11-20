@@ -4,10 +4,15 @@
 [ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="2_b1b3u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl4vt"]
-size = Vector2(106.20815, 64.49779)
+size = Vector2(81.3369, 39.905254)
 
 [node name="PickupItem" type="Area2D" unique_id=2034020040]
 script = ExtResource("1_b1b3u")
+can_inspect = null
+readable_text = null
+can_open = null
+contains_item = null
+contained_item_name = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=615337673]
 position = Vector2(655.8582, 351.94443)

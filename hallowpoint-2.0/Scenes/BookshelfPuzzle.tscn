@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://cbmmcsxj2k614"]
+
+[ext_resource type="Texture2D" uid="uid://c0jayhfthp330" path="res://Assets/Images/MAP/BookShelfPuzzle.png" id="1_era2c"]
+[ext_resource type="Script" uid="uid://cd27h04qmfl3h" path="res://Scripts/LB/LBLibrary/BookshelfPuzzle.gd" id="1_xau35"]
+[ext_resource type="Texture2D" uid="uid://ddtlbaq0nmdwm" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/SBook6.png" id="2_kwpsx"]
+[ext_resource type="Texture2D" uid="uid://d0gyymr5o72m5" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/SBook2.png" id="2_xau35"]
+[ext_resource type="Texture2D" uid="uid://d11n4s6p48akc" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/SBook5.png" id="3_ppii2"]
+[ext_resource type="PackedScene" uid="uid://ddg2wwdbelttm" path="res://Scenes/YearbookInspect.tscn" id="3_woolp"]
+[ext_resource type="Texture2D" uid="uid://dyepi0qgenicl" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/SBook4.png" id="4_kwpsx"]
+[ext_resource type="Texture2D" uid="uid://dhu4yuj0eu7d6" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/SBook1.png" id="5_woolp"]
+[ext_resource type="Texture2D" uid="uid://y0upnmav1ore" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/SBook3.png" id="6_srnd7"]
+[ext_resource type="Texture2D" uid="uid://lnp21jojpjvn" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/Book1.png" id="7_k1o32"]
+[ext_resource type="Texture2D" uid="uid://b4ttwk2v42uri" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/Book2.png" id="8_rx0eb"]
+[ext_resource type="Texture2D" uid="uid://bcv8gsa7bq6ge" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/Book4.png" id="9_humje"]
+[ext_resource type="Texture2D" uid="uid://cfcwg02o31hhk" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/Book3.png" id="10_j5ac5"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="12_ppii2"]
+
+[node name="BookshelfPuzzle" type="Control" unique_id=823428751]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xau35")
+last_pages_texture = ExtResource("2_kwpsx")
+yearbook_inspect_scene = ExtResource("3_woolp")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1080631597]
+custom_minimum_size = Vector2(641, 358)
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 720.0
+texture = ExtResource("1_era2c")
+expand_mode = 1
+
+[node name="BookSlots" type="Control" parent="." unique_id=2089367303]
+anchors_preset = 0
+offset_left = 143.0
+offset_top = 58.0
+offset_right = 1140.0
+offset_bottom = 327.0
+metadata/_edit_lock_ = true
+
+[node name="Slot1" type="Control" parent="BookSlots" unique_id=1658633572]
+anchors_preset = 0
+offset_left = 142.0
+offset_top = 7.0
+offset_right = 240.0
+offset_bottom = 263.0
+
+[node name="TextureRect" type="TextureRect" parent="BookSlots/Slot1" unique_id=799901631]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("5_woolp")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot2" type="Control" parent="BookSlots" unique_id=1088881696]
+anchors_preset = 0
+offset_left = 266.0
+offset_top = 7.0
+offset_right = 364.0
+offset_bottom = 263.0
+
+[node name="TextureRect" type="TextureRect" parent="BookSlots/Slot2" unique_id=178862347]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("4_kwpsx")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot3" type="Control" parent="BookSlots" unique_id=415771104]
+anchors_preset = 0
+offset_left = 389.0
+offset_top = 7.0
+offset_right = 487.0
+offset_bottom = 263.0
+
+[node name="TextureRect" type="TextureRect" parent="BookSlots/Slot3" unique_id=46543147]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("3_ppii2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot4" type="Control" parent="BookSlots" unique_id=229785269]
+anchors_preset = 0
+offset_left = 509.0
+offset_top = 7.0
+offset_right = 607.0
+offset_bottom = 263.0
+
+[node name="TextureRect" type="TextureRect" parent="BookSlots/Slot4" unique_id=198576451]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("2_xau35")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot5" type="Control" parent="BookSlots" unique_id=1362346358]
+anchors_preset = 0
+offset_left = 633.0
+offset_top = 7.0
+offset_right = 731.0
+offset_bottom = 263.0
+
+[node name="TextureRect" type="TextureRect" parent="BookSlots/Slot5" unique_id=1914312447]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("6_srnd7")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot6" type="Control" parent="BookSlots" unique_id=400392579]
+anchors_preset = 0
+offset_left = 759.0
+offset_top = 6.0
+offset_right = 857.0
+offset_bottom = 262.0
+
+[node name="TextureRect" type="TextureRect" parent="BookSlots/Slot6" unique_id=638647223]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 256.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Bookslots2" type="HBoxContainer" parent="." unique_id=70323936]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 349.0
+offset_right = 1139.0
+offset_bottom = 618.0
+metadata/_edit_lock_ = true
+
+[node name="Slot1" type="Control" parent="Bookslots2" unique_id=188508788]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Bookslots2/Slot1" unique_id=1487730153]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 6.0
+offset_right = 240.0
+offset_bottom = 262.0
+mouse_filter = 0
+texture = ExtResource("7_k1o32")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Bookslots2/Slot1" unique_id=1551834404]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 6.0
+offset_right = 651.0
+offset_bottom = 262.0
+mouse_filter = 0
+texture = ExtResource("7_k1o32")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="Bookslots2/Slot1" unique_id=428592992]
+layout_mode = 0
+offset_left = 904.2981
+offset_top = 7.4871407
+offset_right = 994.7915
+offset_bottom = 244.2235
+rotation = 0.2617994
+mouse_filter = 0
+texture = ExtResource("7_k1o32")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot2" type="Control" parent="Bookslots2" unique_id=927738374]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Bookslots2/Slot2" unique_id=726915035]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 7.0
+offset_right = 340.0
+offset_bottom = 263.0
+texture = ExtResource("8_rx0eb")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot3" type="Control" parent="Bookslots2" unique_id=1841870464]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Bookslots2/Slot3" unique_id=672864276]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 7.0
+offset_right = 439.0
+offset_bottom = 263.0
+texture = ExtResource("9_humje")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Bookslots2/Slot3" unique_id=1288105567]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 7.0
+offset_right = 541.0
+offset_bottom = 263.0
+texture = ExtResource("9_humje")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot4" type="Control" parent="Bookslots2" unique_id=1600402005]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Bookslots2/Slot4" unique_id=965410095]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 4.0
+offset_right = 837.0
+offset_bottom = 260.0
+texture = ExtResource("10_j5ac5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Slot5" type="Control" parent="Bookslots2" unique_id=2133258253]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Bookslots2/Slot5" unique_id=796781885]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 264.0
+texture = ExtResource("9_humje")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="BookDescription" type="PanelContainer" parent="." unique_id=2042548082]
+visible = false
+layout_mode = 0
+offset_left = 123.0
+offset_top = 402.0
+offset_right = 1155.0
+offset_bottom = 657.0
+
+[node name="DescriptionLabel" type="Label" parent="BookDescription" unique_id=618874491]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ppii2")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="." unique_id=1301414637]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 645.0
+offset_right = 724.0
+offset_bottom = 710.0
+theme_override_fonts/font = ExtResource("12_ppii2")
+theme_override_font_sizes/font_size = 30
+text = "Close"

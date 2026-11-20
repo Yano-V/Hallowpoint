@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://jhtrkqi7tnqf"]
+
+[ext_resource type="Script" uid="uid://m61ix0xi1u0l" path="res://Scripts/ItemInspectUI.gd" id="1_oceqb"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="2_xmhip"]
+
+[node name="ItemInspectUI" type="Control" unique_id=431691471]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oceqb")
+
+[node name="Darkbackground" type="ColorRect" parent="." unique_id=239191063]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="ItemImage" type="TextureRect" parent="." unique_id=169412412]
+visible = false
+layout_mode = 0
+offset_left = 69.0
+offset_top = 87.0
+offset_right = 585.0
+offset_bottom = 585.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContainedItemImage" type="TextureRect" parent="." unique_id=821040326]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 233.0
+offset_right = 516.0
+offset_bottom = 433.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ReadingPanel" type="PanelContainer" parent="." unique_id=893118760]
+visible = false
+layout_mode = 0
+offset_left = 603.0
+offset_top = 102.0
+offset_right = 1196.0
+offset_bottom = 541.0
+
+[node name="ReadingText" type="Label" parent="ReadingPanel" unique_id=1251338735]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xmhip")
+autowrap_mode = 3
+
+[node name="ReadLabel" type="Label" parent="." unique_id=1952787357]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 600.0
+offset_right = 910.0
+offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("2_xmhip")
+theme_override_font_sizes/font_size = 30
+text = "E - Read"
+
+[node name="ExitLabel" type="Label" parent="." unique_id=767264457]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 635.0
+offset_right = 914.0
+offset_bottom = 672.0
+theme_override_fonts/font = ExtResource("2_xmhip")
+theme_override_font_sizes/font_size = 30
+text = "F - Return"

@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://2dp04kv36w0h"]
+
+[ext_resource type="Script" uid="uid://c3eewgvyx1wy5" path="res://Scripts/LB/LBLobby/LBLobby.gd" id="1_6g0k6"]
+[ext_resource type="Texture2D" uid="uid://c567rruu8dsd4" path="res://Assets/Images/MAP/LB Lobby.jpg" id="1_54w8g"]
+[ext_resource type="Texture2D" uid="uid://dkbvcal2dlu5x" path="res://Assets/Images/MAP/LBLobbyFG.png" id="2_7881r"]
+[ext_resource type="Script" uid="uid://3sqgbop1n3mo" path="res://Scripts/LB/LBLobby/MapExit.gd" id="2_m0bvb"]
+[ext_resource type="Script" uid="uid://dtdrnt1ooh5t2" path="res://Scripts/LB/LBLobby/ConcreteZone.gd" id="3_kpmdr"]
+[ext_resource type="PackedScene" uid="uid://drsadiwrmbnqa" path="res://Scenes/Interactable.tscn" id="3_maie6"]
+[ext_resource type="Script" uid="uid://clg6q07qu5in6" path="res://Scripts/LB/LBLobby/MapExit2.gd" id="4_63c5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54w8g"]
+size = Vector2(11, 730)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0bvb"]
+size = Vector2(259, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maie6"]
+size = Vector2(213.8503, 7.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63c5g"]
+size = Vector2(148.5, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7881r"]
+size = Vector2(127.09277, 13.954147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpmdr"]
+size = Vector2(809, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6g0k6"]
+size = Vector2(238, 360.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3mel"]
+size = Vector2(1282.5, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rgav"]
+size = Vector2(8.5, 187)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72dqe"]
+size = Vector2(89, 160.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kct7s"]
+size = Vector2(24, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jrhs"]
+size = Vector2(20, 235)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uyrl"]
+size = Vector2(1262, 608)
+
+[node name="LBLobby" type="Node2D" unique_id=1361355814]
+script = ExtResource("1_6g0k6")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1739016210]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=1189627340]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_54w8g")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=107308821]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=503537113]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1225040217]
+position = Vector2(-4.5, 355)
+shape = SubResource("RectangleShape2D_54w8g")
+
+[node name="TopStairsWall" type="StaticBody2D" parent="Walls" unique_id=1390232109]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopStairsWall" unique_id=1720412950]
+position = Vector2(119.5, 92)
+shape = SubResource("RectangleShape2D_m0bvb")
+
+[node name="StairsWall-1" type="StaticBody2D" parent="Walls" unique_id=1222849849]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StairsWall-1" unique_id=1428582635]
+position = Vector2(354.04498, 146.13306)
+rotation = 0.50213283
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_maie6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/StairsWall-1" unique_id=162969142]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StairsWall-1/StaticBody2D" unique_id=576190871]
+position = Vector2(177.75, 460.5)
+shape = SubResource("RectangleShape2D_63c5g")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls/StairsWall-1" unique_id=217832304]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StairsWall-1/StaticBody2D2" unique_id=878883628]
+position = Vector2(314.52005, 486.83536)
+rotation = 0.48104382
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_7881r")
+
+[node name="LongWall" type="StaticBody2D" parent="Walls" unique_id=391830268]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LongWall" unique_id=908528785]
+position = Vector2(875.5, 186.25)
+shape = SubResource("RectangleShape2D_kpmdr")
+
+[node name="ElevWall" type="StaticBody2D" parent="Walls" unique_id=477093336]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/ElevWall" unique_id=564844421]
+position = Vector2(1160, 367.75)
+shape = SubResource("RectangleShape2D_6g0k6")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=1611056571]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=151647808]
+position = Vector2(640.75, 720.75)
+shape = SubResource("RectangleShape2D_f3mel")
+
+[node name="TYKWall" type="StaticBody2D" parent="Walls" unique_id=1034533812]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TYKWall" unique_id=1349566611]
+position = Vector2(1284.75, 628.5)
+shape = SubResource("RectangleShape2D_0rgav")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=915225481]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=289340885]
+position = Vector2(53, 486.25)
+shape = SubResource("RectangleShape2D_72dqe")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1931416875]
+z_index = 1
+position = Vector2(641, 358)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=40164100]
+position = Vector2(2.500019, 2.5000253)
+scale = Vector2(0.9126421, 0.91035354)
+texture = ExtResource("2_7881r")
+metadata/_edit_lock_ = true
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1171656056]
+position = Vector2(1206, 671)
+
+[node name="MapExit" type="Area2D" parent="." unique_id=200061222 groups=["map_exits"]]
+script = ExtResource("2_m0bvb")
+target_scene = "uid://bgx8qpushh2ct"
+destination_spawn = "PlayerSpawn3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=242348533]
+position = Vector2(1268, 667.5)
+shape = SubResource("RectangleShape2D_kct7s")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="Interactable" parent="." unique_id=720223303 instance=ExtResource("3_maie6")]
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=114311415]
+position = Vector2(14, 644)
+rotation = 1.5707964
+debug_color = Color(0.88972116, 0.21289405, 0.621762, 0.41960785)
+
+[node name="MapExit2" type="Area2D" parent="." unique_id=781292015]
+script = ExtResource("4_63c5g")
+target_scene = "uid://bkoygmu68s83u"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit2" unique_id=1574421478]
+position = Vector2(8, 223.5)
+shape = SubResource("RectangleShape2D_0jrhs")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PlayerSpawn4" type="Marker2D" parent="." unique_id=1607951857]
+position = Vector2(101, 246)
+
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=1994428740]
+script = ExtResource("3_kpmdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=1799437176]
+position = Vector2(636, 415)
+shape = SubResource("RectangleShape2D_5uyrl")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[editable path="Interactable"]

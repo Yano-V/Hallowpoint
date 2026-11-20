@@ -1,0 +1,295 @@
+[gd_scene format=3 uid="uid://dlexduknltjt2"]
+
+[ext_resource type="Texture2D" uid="uid://bxydinbymxc6x" path="res://Assets/Images/MAP/LB Library.jpg" id="1_c14c3"]
+[ext_resource type="Script" uid="uid://b4gqru3vbo5n0" path="res://Scripts/LB/LBLibrary/LBLibrary.gd" id="1_gx0br"]
+[ext_resource type="Script" uid="uid://cu5m5nvfgsa8h" path="res://Scripts/LB/LBLibrary/MapExit.gd" id="2_kgh54"]
+[ext_resource type="PackedScene" uid="uid://dk0wa8h1735vi" path="res://Scenes/PickupItem.tscn" id="3_x1fke"]
+[ext_resource type="Texture2D" uid="uid://c3u0r07xxajry" path="res://Assets/Images/PuzzleItems/LibrarianLog.png" id="4_0t1vi"]
+[ext_resource type="Script" uid="uid://b2hdswopq6gtr" path="res://Scripts/LB/LBLibrary/BookshelfInteraction.gd" id="5_4hqtw"]
+[ext_resource type="FontFile" uid="uid://daxcf4opy8nhw" path="res://Assets/Audio/PixelifySans-VariableFont_wght.ttf" id="6_kc1fm"]
+[ext_resource type="Texture2D" uid="uid://b4fyidkaybfyn" path="res://Assets/Images/PuzzleItems/Books/UpdatedBooks/The Last Pages.png" id="7_kc1fm"]
+[ext_resource type="Script" uid="uid://bjtt0e05nevje" path="res://Scripts/LB/LBLibrary/ConcreteZone.gd" id="8_m5tix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgh54"]
+size = Vector2(1284, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1fke"]
+size = Vector2(8, 726)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t1vi"]
+size = Vector2(133.25, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hqtw"]
+size = Vector2(38.5, 49.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc1fm"]
+size = Vector2(177.5, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5tix"]
+size = Vector2(33, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx0br"]
+size = Vector2(464.5, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxahs"]
+size = Vector2(102, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnt3b"]
+size = Vector2(32.5, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodx0"]
+size = Vector2(140, 26.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwxag"]
+size = Vector2(61, 160.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyuv6"]
+size = Vector2(1277, 565)
+
+[node name="LBLibrary" type="Node2D" unique_id=1484403209]
+script = ExtResource("1_gx0br")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1044759880]
+position = Vector2(641, 358)
+
+[node name="Map" type="Sprite2D" parent="Background" unique_id=719890991]
+position = Vector2(0.499, 0.5)
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("1_c14c3")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=863103836]
+
+[node name="Top-Bot" type="StaticBody2D" parent="Walls" unique_id=865390796]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top-Bot" unique_id=961468986]
+position = Vector2(641, 37)
+shape = SubResource("RectangleShape2D_kgh54")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Top-Bot" unique_id=2136794211]
+position = Vector2(646, 764)
+shape = SubResource("RectangleShape2D_kgh54")
+
+[node name="Left-Right" type="StaticBody2D" parent="Walls" unique_id=1592202324]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left-Right" unique_id=345350339]
+position = Vector2(-4, 364)
+shape = SubResource("RectangleShape2D_x1fke")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Left-Right" unique_id=1699061717]
+position = Vector2(1287, 363)
+shape = SubResource("RectangleShape2D_x1fke")
+
+[node name="Table" type="StaticBody2D" parent="Walls" unique_id=376053431]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Table" unique_id=1803489554]
+position = Vector2(137.75, 329.5)
+shape = SubResource("RectangleShape2D_0t1vi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Table" unique_id=11014082]
+position = Vector2(506.375, 331)
+shape = SubResource("RectangleShape2D_0t1vi")
+
+[node name="Chair" type="StaticBody2D" parent="Walls" unique_id=2517401]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Chair" unique_id=969976831]
+position = Vector2(817, 383)
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/Chair" unique_id=1130676294]
+position = Vector2(506, 264)
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/Chair" unique_id=1026777373]
+position = Vector2(138, 260)
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls/Chair" unique_id=456209069]
+position = Vector2(158, 456)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls/Chair" unique_id=134021097]
+position = Vector2(109, 667)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls/Chair" unique_id=1164066373]
+position = Vector2(65, 565)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls/Chair" unique_id=255369827]
+position = Vector2(249, 344)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls/Chair" unique_id=1718829145]
+position = Vector2(390, 337)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls/Chair" unique_id=1119145404]
+position = Vector2(529, 456)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls/Chair" unique_id=1828437537]
+position = Vector2(19, 337)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls/Chair" unique_id=1761827607]
+position = Vector2(286, 472)
+shape = SubResource("RectangleShape2D_4hqtw")
+
+[node name="Desk" type="StaticBody2D" parent="Walls" unique_id=610561933]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Desk" unique_id=439881722]
+position = Vector2(806.25, 443)
+shape = SubResource("RectangleShape2D_kc1fm")
+
+[node name="Desk2" type="StaticBody2D" parent="Walls" unique_id=1019369377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Desk2" unique_id=616538234]
+position = Vector2(736.5, 387.5)
+shape = SubResource("RectangleShape2D_m5tix")
+
+[node name="DeskTables" type="StaticBody2D" parent="Walls" unique_id=1680637462]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/DeskTables" unique_id=1374725231]
+position = Vector2(1045.75, 691)
+shape = SubResource("RectangleShape2D_gx0br")
+
+[node name="extra" type="StaticBody2D" parent="Walls" unique_id=493406058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/extra" unique_id=688217574]
+position = Vector2(997, 94.25)
+shape = SubResource("RectangleShape2D_kxahs")
+
+[node name="Shelves" type="StaticBody2D" parent="Walls" unique_id=67589051]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Shelves" unique_id=2015322311]
+position = Vector2(975.75, 374.5)
+shape = SubResource("RectangleShape2D_lnt3b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Shelves" unique_id=2020280383]
+position = Vector2(1095, 374)
+shape = SubResource("RectangleShape2D_lnt3b")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/Shelves" unique_id=1482276624]
+position = Vector2(1186, 374)
+shape = SubResource("RectangleShape2D_lnt3b")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/Shelves" unique_id=577879014]
+position = Vector2(1275, 375)
+shape = SubResource("RectangleShape2D_lnt3b")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=2033817016]
+z_index = 1
+position = Vector2(641, 358)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=229473322]
+position = Vector2(632, 639)
+
+[node name="MapExit" type="Area2D" parent="." unique_id=1995309572 groups=["map_exits"]]
+script = ExtResource("2_kgh54")
+target_scene = "uid://nc5lmlsdfqes"
+destination_spawn = "PlayerSpawn2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapExit" unique_id=1586611338]
+position = Vector2(629, 705.75)
+shape = SubResource("RectangleShape2D_wodx0")
+debug_color = Color(0.85490197, 0.36862746, 0.019607844, 0.41960785)
+
+[node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("3_x1fke")]
+item_name = "Librarian's Log"
+can_inspect = true
+inspection_texture = ExtResource("4_0t1vi")
+readable_text = "LIBRARIAN'S LOG
+An old, dust-covered journal. Several pages are worn and yellowed.
+
+**October 17 — Final Entry**
+I've spent years preserving the history of this university. Every book on that shelf holds a piece of our past, from its humble beginnings to the final days recorded within these walls.
+The books were never meant to be placed randomly. **History must follow the order in which it happened.** Only then will the shelf reveal what it has been keeping.
+Something has always bothered me about the **1974 Yearbook**. Its pages look ordinary, yet it feels much heavier than any book of its size.
+I once noticed a strange marking hidden among its pages, but my eyes could no longer make out the details.
+And now, one of the history books has gone missing. I fear it may have been buried beneath the fallen debris.
+*If someone finds this journal, remember: the past must be put back in its rightful place.*
+
+— **The Librarian**"
+can_open = false
+contains_item = false
+contained_item_name = "Magnifying Glass"
+
+[node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
+position = Vector2(670.80896, 526.4617)
+rotation = 0.2617994
+scale = Vector2(0.03802908, 0.039369497)
+texture = ExtResource("4_0t1vi")
+
+[node name="CollisionShape2D" parent="PickupItem" index="1" unique_id=296146495]
+position = Vector2(671.4038, 525.6441)
+rotation = 0.2617994
+scale = Vector2(0.9999992, 0.9999992)
+
+[node name="Prompt" parent="PickupItem" index="2" unique_id=1027660579]
+offset_left = 703.0
+offset_top = 494.0
+offset_right = 881.0
+offset_bottom = 550.0
+
+[node name="BookshelfInteraction" type="Area2D" parent="." unique_id=377563000]
+script = ExtResource("5_4hqtw")
+puzzle_scene_path = "uid://cbmmcsxj2k614"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BookshelfInteraction" unique_id=1380456487]
+position = Vector2(975.5, 410.75)
+shape = SubResource("RectangleShape2D_kwxag")
+debug_color = Color(0.40180793, 0.60746455, 0.10705682, 0.41960785)
+
+[node name="Prompt" type="Label" parent="BookshelfInteraction" unique_id=1376538016]
+visible = false
+offset_left = 891.0
+offset_top = 668.0
+offset_right = 1200.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("6_kc1fm")
+theme_override_font_sizes/font_size = 30
+text = "E - Inspect Bookshelf"
+
+[node name="PickupItem2" parent="." unique_id=223359058 instance=ExtResource("3_x1fke")]
+item_name = "The Last Pages"
+item_texture = ExtResource("7_kc1fm")
+can_inspect = false
+readable_text = "E - Pick up"
+can_open = false
+contains_item = false
+contained_item_name = "Magnifying Glass"
+
+[node name="Sprite2D" parent="PickupItem2" index="0" unique_id=615337673]
+position = Vector2(315.00003, 604.99994)
+rotation = -0.2617994
+scale = Vector2(0.045994822, 0.04333287)
+texture = ExtResource("7_kc1fm")
+
+[node name="CollisionShape2D" parent="PickupItem2" index="1" unique_id=296146495]
+position = Vector2(317, 604.00006)
+rotation = 0.0
+
+[node name="Prompt" parent="PickupItem2" index="2" unique_id=1027660579]
+offset_left = 203.0
+offset_top = 608.0
+offset_right = 381.0
+offset_bottom = 664.0
+
+[node name="ConcreteZone" type="Area2D" parent="." unique_id=1829483946]
+script = ExtResource("8_m5tix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConcreteZone" unique_id=1350838417]
+position = Vector2(641.5, 436.5)
+shape = SubResource("RectangleShape2D_uyuv6")
+debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
+
+[editable path="PickupItem"]
+[editable path="PickupItem2"]

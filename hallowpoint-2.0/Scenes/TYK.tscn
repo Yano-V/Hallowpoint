@@ -444,6 +444,11 @@ debug_color = Color(0.8235294, 0.2509804, 0.7764706, 0.41960785)
 
 [node name="PickupItem" parent="." unique_id=2034020040 instance=ExtResource("9_fr62m")]
 item_name = "Golden Shard"
+can_inspect = false
+readable_text = ""
+can_open = false
+contains_item = false
+contained_item_name = "Magnifying Glass"
 
 [node name="Sprite2D" parent="PickupItem" index="0" unique_id=615337673]
 position = Vector2(145.99994, 432.99997)
